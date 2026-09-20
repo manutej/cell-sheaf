@@ -1,0 +1,95 @@
+{
+  "name": "cell-sheaf",
+  "kind": "SheafGraph",
+  "note": "Restriction color is glue, not taste. note ∈ {ok, strange, broken, missing}.",
+  "stalks": [
+    {"id": "greta", "label": "Greta", "kind": "person", "sort": "entity", "side": "B", "dim": 4, "folder": "cast"},
+    {"id": "little-women", "label": "Little Women", "kind": "work", "sort": "entity", "side": "B", "dim": 5, "folder": "works"},
+    {"id": "saoirse", "label": "Saoirse", "kind": "person", "sort": "entity", "side": "B", "dim": 4, "folder": "cast"},
+    {"id": "a24", "label": "A24", "kind": "org", "sort": "entity", "side": "B", "dim": 3, "folder": "studios"},
+    {"id": "venice", "label": "Venice", "kind": "event", "sort": "entity", "side": "B", "dim": 3, "folder": "festivals"},
+    {"id": "new-film", "label": "New Film", "kind": "work", "sort": "entity", "side": "U", "dim": 3, "folder": "works"},
+    {"id": "festival", "label": "Festival", "kind": "event", "sort": "entity", "side": "U", "dim": 2, "folder": "festivals"},
+    {"id": "repo", "label": "cell-sheaf", "kind": "repo", "sort": "entity", "side": "B", "dim": 6, "folder": "cell-sheaf"}
+  ],
+  "relations": [
+    {"id": "wrote", "label": "wrote"},
+    {"id": "starred", "label": "starred"},
+    {"id": "produced", "label": "produced"},
+    {"id": "screened", "label": "screened"},
+    {"id": "commits", "label": "commits"}
+  ],
+  "restrictions": [
+    {"from": "greta", "into": "wrote", "note": "ok"},
+    {"from": "little-women", "into": "wrote", "note": "ok"},
+    {"from": "saoirse", "into": "starred", "note": "ok"},
+    {"from": "little-women", "into": "starred", "note": "ok"},
+    {"from": "a24", "into": "produced", "note": "ok"},
+    {"from": "little-women", "into": "produced", "note": "ok"},
+    {"from": "venice", "into": "screened", "note": "ok"},
+    {"from": "little-women", "into": "screened", "note": "ok"},
+    {"from": "new-film", "into": "produced", "note": "strange"},
+    {"from": "festival", "into": "screened", "note": "missing"},
+    {"from": "repo", "into": "commits", "note": "ok"}
+  ],
+  "hierarchy": [
+    {"from": "greta", "into": "little-women", "note": "ok"},
+    {"from": "saoirse", "into": "little-women", "note": "ok"},
+    {"from": "a24", "into": "little-women", "note": "ok"},
+    {"from": "little-women", "into": "venice", "note": "ok"},
+    {"from": "new-film", "into": "festival", "note": "strange"},
+    {"from": "repo", "into": "little-women", "note": "broken"}
+  ],
+  "harmonic": [
+    {"from": "little-women", "into": "new-film", "note": "ok"},
+    {"from": "venice", "into": "festival", "note": "ok"},
+    {"from": "a24", "into": "new-film", "note": "strange"},
+    {"from": "repo", "into": "new-film", "note": "missing"}
+  ],
+  "commits": [
+    {"id": "c1", "sha": "db0534d", "msg": "init sheaf volume", "folder": "cell-sheaf", "status": "ok", "on": "repo"},
+    {"id": "c2", "sha": "a1f3c90", "msg": "restriction maps as ρ", "folder": "data", "status": "ok", "on": "repo"},
+    {"id": "c3", "sha": "7e2b11c", "msg": "touch modes + sheet", "folder": "cell-sheaf", "status": "ok", "on": "repo"},
+    {"id": "c4", "sha": "c0ffee1", "msg": "pre-commit ρ hook", "folder": "hooks", "status": "missing", "on": "repo"}
+  ],
+  "fans": {
+    "up": [
+      {"id": "readme", "label": "README", "of": "repo", "note": "ok"},
+      {"id": "schema", "label": "schema", "of": "repo", "note": "ok"},
+      {"id": "seats", "label": "seats", "of": "little-women", "note": "ok"},
+      {"id": "credits", "label": "credits", "of": "greta", "note": "ok"}
+    ],
+    "down": [
+      {"id": "ci", "label": "ci", "of": "repo", "note": "ok"},
+      {"id": "hook", "label": "hook", "of": "repo", "note": "missing"},
+      {"id": "release", "label": "release", "of": "repo", "note": "strange"},
+      {"id": "fold", "label": "fold", "of": "little-women", "note": "ok"},
+      {"id": "premiere", "label": "premiere", "of": "new-film", "note": "strange"}
+    ]
+  },
+  "types": [
+    {"id": "t-sheaf", "label": "SheafGraph"},
+    {"id": "t-rho", "label": "Restriction"},
+    {"id": "t-skill", "label": "Skill"},
+    {"id": "t-surf", "label": "Surface"},
+    {"id": "t-verdict", "label": "Verdict"},
+    {"id": "t-commit", "label": "Commit"}
+  ],
+  "typeRho": [
+    {"from": "t-skill", "into": "t-surf", "note": "ok"},
+    {"from": "t-surf", "into": "t-sheaf", "note": "ok"},
+    {"from": "t-sheaf", "into": "t-rho", "note": "ok"},
+    {"from": "t-rho", "into": "t-verdict", "note": "ok"},
+    {"from": "t-commit", "into": "t-rho", "note": "ok"},
+    {"from": "t-skill", "into": "t-verdict", "note": "strange"}
+  ],
+  "artifacts": [
+    {"id": "a-trunk", "label": "trunk-sheaf.json", "type": "t-sheaf", "livesAt": "repo", "note": "ok"},
+    {"id": "a-html", "label": "index.html", "type": "t-surf", "livesAt": "repo", "note": "ok"},
+    {"id": "a-handoff", "label": "HANDOFF", "type": "t-skill", "livesAt": "repo", "note": "ok"},
+    {"id": "a-eval", "label": "DESIGN-EVAL", "type": "t-verdict", "livesAt": "repo", "note": "ok"},
+    {"id": "a-hook", "label": "pre-commit ρ", "type": "t-rho", "livesAt": "repo", "note": "missing"},
+    {"id": "a-dash", "label": "lattice dash", "type": "t-surf", "livesAt": "repo", "note": "broken"},
+    {"id": "a-c3", "label": "7e2b11c", "type": "t-commit", "livesAt": "repo", "note": "ok"}
+  ]
+}
