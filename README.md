@@ -1,55 +1,38 @@
 # cell-sheaf
 
-Cellular sheaf volume for mapping **stalks**, **restriction maps** ρ, and **glue status** — not a prettier graph.
+HTML **design template** for a cellular sheaf volume. Copy [`template/`](template/). Do not restyle `tokens.css`. JSON is the sheaf.
 
-Touch-first. Pause-first. Color is the restriction, not a review.
+This is the visual law people copy when rolling a new sheaf — not a screenshot, not the React observatory.
 
-## Open it
+Kernel + swarm clock + contract schema: [manutej/cell-sheaf-swarm](https://github.com/manutej/cell-sheaf-swarm)
 
-Open [index.html](index.html) in a browser, or enable GitHub Pages on `main` (`/` root).
+## Copy this chrome
 
-Phone and tablet: swipe **vertically** through modes. Restriction maps change with the mode. Tap a pillar. The inspector is a small bottom sheet.
+| file | role |
+| --- | --- |
+| `template/index.html` | Chrome. Loads catalog + any rolled sheaf. |
+| `template/tokens.css` | Sanzo Wada tokens. Olive-buff paper, ube, emerald, gold. **Do not restyle.** |
+| `template/volume.paint.js` | Curvilinear ρ, last-folder pillars, up/down fans. |
+| `template/volume.boot.js` | Contract fetch, swipe/orbit, pause-default, roll file. |
+| `contracts/*.sheaf.json` | The sheaf. Swap this. |
 
-## Modes (vertical)
+Root `index.html` is the same template over `contracts/` (GitHub Pages entry). Enable Pages from `main` / root.
 
-| # | Mode | What ρ is drawn |
-|---|---|---|
-| 1 | Pillars | stalks only — height = dim |
-| 2 | Restrictions | entity → relation \(R_{rv}: F(v)\to F(r)\) |
-| 3 | Strata | hierarchy ρ (kind planes) |
-| 4 | Harmonic | known boundary \(B\) extends into unknown \(U\) |
-| 5 | Fan | one stalk’s ancillary nodes (up = can-see, down = downstream) |
-| 6 | Subspaces | type discs ↔ artifacts ↔ lower sheaf pillars |
+Pause is default. Cap = ancillary (up). Base = downstream (down). Gold is earned (`onTrunk`).
 
-## Glue color (operadic trunk)
+## Views
 
-| Color | ρ status | Commit rule |
-|---|---|---|
-| Green | compose = collapse | legal trunk edge |
-| Orange | map exists, rank/sort odd | needs a person |
-| Red | missing, or \(\delta\) will not go to zero | do not fold |
+Mode remaps which ρ family is drawn: pillars · rho · strata · harmonic · trunk · subspaces.
 
-## Touch
+## Glue
 
-- Vertical swipe on the volume → next / previous mode (ρ family remaps)
-- Horizontal drag → orbit
-- Pinch → zoom
-- Tap pillar / commit / artifact → sheet
-- Swipe sheet down → dismiss
-- Space or Play → orbit on/off (starts **paused**)
+| status | color | fold into trunk? |
+| --- | --- | --- |
+| `ok` | green | yes |
+| `strange` | orange | only after a person |
+| `broken` | red | no |
+| `missing` | gray dashed | no |
 
-Desktop still has hover stalks. Coarse pointers never rely on hover.
+Pillars are **last-folders**. Color is glue, not taste.
 
-## Data
-
-Map a repo by writing SHAs into [`data/trunk-sheaf.json`](data/trunk-sheaf.json).
-
-- `pooledFrom` is last-folder only, never a full path
-- `note` on an edge is `ok | strange | broken | missing`
-- a pre-commit hook can refuse a new ρ that would paint orange or red
-
-Specimen graph in the volume is Greta / Little Women / Saoirse (Cobb–Gebhart inductive example) plus this repo as a trunk stalk.
-
-## Palette
-
-Sanzo Wada combinations — Olive Buff paper, Cossack Green known, wine unknown, Cinnamon Buff gold pinned, Neutral Gray silver edge-stalks, Burnt Sienna coboundary friction, Cotinga Purple / ube orchestration.
+License: MIT.
