@@ -22,7 +22,7 @@ Pause is default. Cap = ancillary (up). Base = downstream (down). Gold is earned
 
 ## Views
 
-Mode remaps which ρ family is drawn: pillars · rho · strata · harmonic · trunk · subspaces.
+The title is the one map that opens a closed folder. Mode remaps which family is drawn: Exists, Restricts, Stacks, Known, May fold, Lives.
 
 ## Glue
 
