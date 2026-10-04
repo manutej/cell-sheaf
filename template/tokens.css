@@ -61,7 +61,6 @@ td { padding: 2px 4px 2px 0; font-family: var(--mono); }
 .err { background: var(--bad); color: var(--paper); font-family: var(--mono); font-size: 0.68rem; padding: 6px 12px; }
 @media (min-width: 901px) and (pointer: fine) {
   .sheet { left: auto; right: 12px; top: 12px; bottom: auto; width: min(320px, 34vw); max-height: calc(100% - 24px); border-radius: 0; border-bottom: 1px solid var(--ink); }
-  .handle, .chip, .rail { }
   .handle { display: none; }
   .chip { display: none; }
   .rail { display: none; }

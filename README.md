@@ -6,6 +6,8 @@ This is the visual law people copy when rolling a new sheaf — not a screenshot
 
 Kernel + swarm clock + contract schema: [manutej/cell-sheaf-swarm](https://github.com/manutej/cell-sheaf-swarm)
 
+Integration and CI: [docs/INTEGRATION.md](docs/INTEGRATION.md) (validates `contracts/` against a pinned kernel commit).
+
 ## Copy this chrome
 
 | file | role |
