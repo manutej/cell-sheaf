@@ -94,7 +94,7 @@ topic: unified-cell-sheaf-integration-mvp
 ### U1. Contract release bus
 
 - Add cell-sheaf CI workflow calling swarm validate script (pinned ref).
-- Document sync procedure in [cell-sheaf `docs/INTEGRATION.md`](../../INTEGRATION.md) (surface build hub).
+- Document sync procedure in [cell-sheaf `docs/INTEGRATION.md`](../INTEGRATION.md) (surface build hub).
 - Align catalogs (adp entry or explicit exclusion policy).
 
 **DoD:** PR to cell-sheaf fails if contracts invalid vs swarm schema.
