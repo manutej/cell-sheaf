@@ -6,6 +6,10 @@ This is the visual law people copy when rolling a new sheaf — not a screenshot
 
 Kernel + swarm clock + contract schema: [manutej/cell-sheaf-swarm](https://github.com/manutej/cell-sheaf-swarm)
 
+## Build & integration
+
+Unified product direction, MVP plan, phased outline, and Phase 0 CI live under **[docs/README.md](docs/README.md)** (surface build hub). Start with [docs/INTEGRATION.md](docs/INTEGRATION.md) for kernel vs surface roles, sync procedure, and federated-loop summary; CI validates `contracts/` against [docs/SWARM_KERNEL_PIN.json](docs/SWARM_KERNEL_PIN.json).
+
 ## Copy this chrome
 
 | file | role |

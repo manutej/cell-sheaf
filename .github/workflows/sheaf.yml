@@ -1,0 +1,28 @@
+name: sheaf
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read kernel pin
+        id: pin
+        run: echo "ref=$(node -p "JSON.parse(require('fs').readFileSync('docs/SWARM_KERNEL_PIN.json','utf8')).ref")" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+        with:
+          repository: manutej/cell-sheaf-swarm
+          ref: ${{ steps.pin.outputs.ref }}
+          path: _kernel
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - run: node scripts/validate-contracts.mjs
+      - run: node scripts/check-kernel-sync.mjs
