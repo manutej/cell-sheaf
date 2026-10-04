@@ -33,8 +33,16 @@ Kernel-side plans and duplicate copies may also exist under [cell-sheaf-swarm `d
 
 ## Quick verify (local)
 
+**Pulse / federation** run in the **kernel** repo, not here:
+
 ```sh
-# From repo root — needs Node 22+ and a checkout of the pinned kernel (CI uses _kernel/)
+cd ../cell-sheaf-swarm   # or repos/cell-sheaf-swarm from /agent
+npm run pulse:run -- --graph contracts/swarm.sheaf.json --ticks 40 --adapter local
+```
+
+Surface checks (from **cell-sheaf** root; CI uses `_kernel/` at the pin):
+
+```sh
 node scripts/validate-contracts.mjs
 node scripts/check-kernel-sync.mjs
 ```
