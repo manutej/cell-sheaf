@@ -20,21 +20,13 @@ function hit(px, py) {
   return best;
 }
 
-var UNVERIFIED_BANNER =
-  "Unverified topology from computed wiring links—not a verified sheaf contradiction.";
-
-function unverifiedTopology() {
-  if (!graph || !imported(graph)) return false;
-  var rs = graph.restrictions || [];
-  return rs.length > 0 && rs.every(function (r) { return r.status === "strange"; });
-}
-
 function syncTopologyBanner() {
   var el = document.getElementById("topology-banner");
   if (!el) return;
-  var show = unverifiedTopology() && !pin;
+  var b = graph ? CellSheafInsight.bannerText(graph) : null;
+  var show = b && !pin;
   el.hidden = !show;
-  el.textContent = show ? UNVERIFIED_BANNER : "";
+  el.textContent = show ? b : "";
 }
 
 function meaning(st) {
@@ -60,138 +52,21 @@ function restrictionById(id) {
   return (graph.restrictions || []).find((r) => r.id === id);
 }
 
-function imported(g) {
-  g = g || graph;
-  if (!g) return false;
-  return Boolean(g["x-sas"]) || !Array.isArray(g.commits);
-}
-
-function isUnverifiedRestriction(r, g) {
-  g = g || graph;
-  if (!r || !g) return false;
-  if (!imported(g)) return false;
-  return r.status === "strange" || r.status === "broken";
-}
-
-function isVerifiedRestriction(r) {
-  return !isUnverifiedRestriction(r);
-}
-
-function targetIsMissing(r) {
-  if (!r || !graph) return false;
-  if (String(r.target).startsWith("missing:")) return true;
-  const p = (graph.pillars || []).find((x) => x.id === r.target);
-  return Boolean(p && p.known === false);
-}
-
-function openIds(flipId) {
-  const open = {};
-  if (!graph) return open;
-  (graph.pillars || []).forEach((p) => {
-    const hit = (graph.restrictions || []).some(
-      (r) => (r.source === p.id || r.target === p.id) && (r.status === "ok" || r.id === flipId),
-    );
-    if (hit) open[p.id] = 1;
-  });
-  return open;
-}
-
-function repairs(g) {
-  g = g || graph;
-  if (!g) return [];
-  const rank = { broken: 0, missing: 1, strange: 2, ok: 3 };
-  const before = openIds();
-  return (g.restrictions || [])
-    .filter((r) => r.status !== "ok")
-    .map((r) => {
-      const after = openIds(r.id);
-      const opens = (g.pillars || []).filter((p) => !before[p.id] && after[p.id]).map((p) => p.folder);
-      const closes = (g.pillars || []).every((p) => after[p.id]);
-      const unverified = isUnverifiedRestriction(r, g);
-      const missing = r.status === "broken" && targetIsMissing(r);
-      return {
-        id: r.id,
-        status: r.status,
-        residual: r.residual,
-        from: folderName(r.source),
-        to: folderName(r.target),
-        opens: opens,
-        closes: closes,
-        unverified: unverified,
-        missing: missing,
-      };
-    })
-    .sort((a, b) => {
-      if (a.closes !== b.closes) return a.closes ? -1 : 1;
-      if (a.opens.length !== b.opens.length) return b.opens.length - a.opens.length;
-      return (rank[a.status] ?? 9) - (rank[b.status] ?? 9) || b.residual - a.residual;
-    });
-}
-
-function closedNames(flipId) {
-  const open = openIds(flipId);
-  return (graph.pillars || []).filter((p) => !open[p.id]).map((p) => p.folder);
+function repairs() {
+  return graph ? CellSheafInsight.repairs(graph) : [];
 }
 
 function verdictText() {
-  if (!graph) return "";
-  if (unverifiedTopology()) {
-    var linkCount = (graph.restrictions || []).length;
-    return linkCount + " computed links, all unverified. No contradiction is claimed.";
-  }
-  const fixes = repairs();
-  const open = (graph.pillars || []).filter((p) => openIds()[p.id]).length;
-  const n = (graph.pillars || []).length;
-  if (!fixes.length) return "Every map commutes. " + open + " folders may fold.";
-  const best = fixes[0];
-  if (best.unverified) {
-    if (best.status === "strange") {
-      return "Check " + best.from + " → " + best.to + ". Unverified link — needs a person.";
-    }
-    if (best.missing) {
-      return "Link to missing page " + best.from + " → " + best.to + ".";
-    }
-    if (best.status === "broken") {
-      return "Check " + best.from + " → " + best.to + ".";
-    }
-  }
-  if (!best.opens.length) return open + " of " + n + " may fold. No single fix opens a new folder.";
-  if (best.closes) return "Fix " + best.from + " → " + best.to + " and the trunk closes.";
-  const still = n - open - best.opens.length;
-  return "Fix " + best.from + " → " + best.to + " and " + best.opens.join(", ") + " may fold. " + still + " still closed.";
-}
-
-function repairLabel(fix) {
-  if (fix.unverified) {
-    if (fix.status === "strange") return fix.from + " → " + fix.to + " · check link";
-    if (fix.missing) return fix.from + " → " + fix.to + " · link to missing page";
-    if (fix.status === "broken") return fix.from + " → " + fix.to + " · check link";
-  }
-  if (fix.closes) return fix.from + " → " + fix.to + " · closes the trunk";
-  if (fix.opens.length) return fix.from + " → " + fix.to + " · opens " + fix.opens.join(", ");
-  return fix.from + " → " + fix.to + " · opens nothing";
+  return graph ? CellSheafInsight.verdict(graph) : "";
 }
 
 function rowText(r) {
-  if (unverifiedTopology()) {
-    return "Check " + r.from + " → " + r.to + " · " + lineOf(r.status);
-  }
-  return repairLabel(r);
+  return CellSheafInsight.repairLabel(r);
 }
 
 function focusText(edge) {
-  const meaning = edge.meaning || lineOf(edge.st);
-  const list = repairs();
-  let f = null;
-  for (let i = 0; i < list.length; i++) if (list[i].id === edge.id) f = list[i];
-  if (!f) return meaning;
-  if (f.closes) return "This one map closes the trunk. " + meaning;
-  if (f.opens.length) {
-    const still = closedNames(edge.id);
-    return "Opens " + f.opens.join(", ") + ". " + (still.length ? still.join(", ") + " still closed. " : "") + meaning;
-  }
-  const closed = closedNames();
-  return "Opens no new folder. " + (closed.length ? closed.join(", ") + " still closed. " : "") + meaning;
+  if (!graph) return edge.meaning || lineOf(edge.st);
+  return CellSheafInsight.focusLine(graph, edge.id) || edge.meaning || lineOf(edge.st);
 }
 
 function fixOf(id) {
@@ -209,11 +84,10 @@ function panel(h) {
   if (!h) {
     syncTopologyBanner();
     const blocks = repairs();
-    pt.textContent = unverifiedTopology() ? "Check these" : "Look here";
+    const banner = graph && CellSheafInsight.bannerText(graph);
+    pt.textContent = banner ? "Check these" : "Look here";
     pm.textContent = BLURB[view];
-    pa.textContent = unverifiedTopology()
-      ? UNVERIFIED_BANNER + " " + ((graph.restrictions[0] && graph.restrictions[0].residualMeaning) || "")
-      : verdictText();
+    pa.textContent = verdictText();
     tb.hidden = !blocks.length;
     body.replaceChildren();
     blocks.slice(0, 6).forEach((r) => {
@@ -266,7 +140,7 @@ function panel(h) {
     let lever = "";
     for (let i = 0; i < fixes.length; i++) {
       if (fixes[i].id !== r.id) continue;
-      if (fixes[i].closes) lever = " · closes the trunk";
+      if (fixes[i].closesTrunk) lever = " · closes the trunk";
       else if (fixes[i].opens.length) lever = " · opens " + fixes[i].opens.join(", ");
     }
     const btn = document.createElement("button");
@@ -290,7 +164,7 @@ function stats() {
   if (!graph) return;
   syncTopologyBanner();
   const blocks = repairs();
-  const open = (graph.pillars || []).filter((p) => openIds()[p.id]).length;
+  const open = graph ? CellSheafInsight.openCount(graph) : 0;
   document.getElementById("sn").textContent = (graph.restrictions || []).length;
   document.getElementById("sok").textContent = open;
   document.getElementById("sbad").textContent = blocks.length;

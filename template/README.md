@@ -8,6 +8,7 @@ The HTML is the thing you copy when rolling a new sheaf — not a screenshot, no
 | --- | --- |
 | `index.html` | Chrome. Loads catalog + any rolled sheaf. |
 | `tokens.css` | Sanzo Wada tokens. Olive-buff paper, ube, emerald, gold. **Do not restyle.** |
+| `insight.bundle.js` | Browser bundle of cell-sheaf-swarm `insight.ts` (headlines, repairs, banner). Rebuild with esbuild when insight changes. |
 | `volume.paint.js` | Curvilinear ρ, last-folder pillars, up/down fans, six design views. |
 | `volume.boot.js` | Contract fetch, swipe/orbit, pause-default, roll file. |
 
