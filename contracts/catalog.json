@@ -18,6 +18,12 @@
       "file": "blank.sheaf.json",
       "title": "Blank sheaf — copy this",
       "role": "template"
+    },
+    {
+      "id": "jane-street-puzzles",
+      "file": "jane-street-puzzles.sheaf.json",
+      "title": "Jane Street puzzles wiki",
+      "role": "rolled"
     }
   ]
 }
