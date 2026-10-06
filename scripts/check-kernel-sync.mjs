@@ -52,11 +52,14 @@ const surfaceSheaves = readdirSync(join(ROOT, "contracts")).filter((f) => f.ends
 for (const file of surfaceSheaves) {
   const sPath = join(ROOT, "contracts", file);
   const surfaceDoc = JSON.parse(readFileSync(sPath, "utf8"));
-  // Bridge imports (x-sas) are authored on the surface, not mirrored from the swarm kernel.
-  if (Object.prototype.hasOwnProperty.call(surfaceDoc, "x-sas")) {
+  const kPath = join(kernelRoot, "contracts", file);
+  // Bridge imports (x-sas, absent from kernel) are authored on the surface only.
+  if (
+    Object.prototype.hasOwnProperty.call(surfaceDoc, "x-sas") &&
+    !existsSync(kPath)
+  ) {
     continue;
   }
-  const kPath = join(kernelRoot, "contracts", file);
   if (!existsSync(kPath)) {
     fail(`contracts/${file} not present in kernel (unexpected surface-only contract)`);
   }
