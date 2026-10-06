@@ -26,3 +26,13 @@ Views (the question changes which family is drawn):
 Pause is default. Cap = ancillary (up). Base = downstream (down). Gold is earned (`onTrunk`).
 
 When rolling a new sheaf, keep these files. Swap JSON only.
+
+## Rebuild `insight.bundle.js`
+
+From the **cell-sheaf-swarm** repo root (esbuild 0.28.2):
+
+```sh
+esbuild src/lib/swarm/insight.ts --bundle --format=iife --global-name=CellSheafInsight --target=es2019
+```
+
+Write the bundle to `template/insight.bundle.js` in this repo (sibling checkouts: redirect to `../cell-sheaf/template/insight.bundle.js`).
