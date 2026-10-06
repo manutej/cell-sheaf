@@ -14,6 +14,12 @@
       "role": "rolled"
     },
     {
+      "id": "fineract-charter-1k",
+      "file": "fineract-charter-1k.sheaf.json",
+      "title": "Fineract charter — 29 handlers",
+      "role": "rolled"
+    },
+    {
       "id": "blank.trunk",
       "file": "blank.sheaf.json",
       "title": "Blank sheaf — copy this",
