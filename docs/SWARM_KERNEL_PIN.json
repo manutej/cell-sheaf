@@ -1,5 +1,5 @@
 {
   "repository": "manutej/cell-sheaf-swarm",
-  "ref": "79aa0e3b35f71dbdcb2c959db0b006a40b3b25bc",
+  "ref": "5956e66fd9ed4189d60bba62ce252c14a8c9d769",
   "note": "Kernel commit for validate-sheaf.mjs and template/contract parity checks. Bump on tagged swarm releases."
 }
