@@ -39,6 +39,21 @@ function folderName(id) {
   return p ? p.folder : id;
 }
 
+function restrictionById(id) {
+  return (graph.restrictions || []).find((r) => r.id === id);
+}
+
+function isVerifiedRestriction(r) {
+  return Boolean(r && r.residualMeaning);
+}
+
+function targetIsMissing(r) {
+  if (!r || !graph) return false;
+  if (String(r.target).startsWith("missing:")) return true;
+  const p = (graph.pillars || []).find((x) => x.id === r.target);
+  return Boolean(p && p.known === false);
+}
+
 function openIds(flipId) {
   const open = {};
   if (!graph) return open;
@@ -90,6 +105,18 @@ function verdictText() {
   const n = (graph.pillars || []).length;
   if (!fixes.length) return "Every map commutes. " + open + " folders may fold.";
   const best = fixes[0];
+  const restr = restrictionById(best.id);
+  if (restr && !isVerifiedRestriction(restr)) {
+    if (restr.status === "strange") {
+      return "Check " + best.from + " → " + best.to + ". Unverified link — needs a person.";
+    }
+    if (restr.status === "broken" && targetIsMissing(restr)) {
+      return "Link to missing page " + best.from + " → " + best.to + ".";
+    }
+    if (restr.status === "broken") {
+      return "Check " + best.from + " → " + best.to + ".";
+    }
+  }
   if (!best.opens.length) return open + " of " + n + " may fold. No single fix opens a new folder.";
   if (best.closes) return "Fix " + best.from + " → " + best.to + " and the trunk closes.";
   const still = n - open - best.opens.length;
@@ -97,6 +124,12 @@ function verdictText() {
 }
 
 function rowText(r) {
+  const restr = restrictionById(r.id);
+  if (restr && !isVerifiedRestriction(restr)) {
+    if (restr.status === "strange") return r.from + " → " + r.to + " · check link";
+    if (restr.status === "broken" && targetIsMissing(restr)) return r.from + " → " + r.to + " · link to missing page";
+    if (restr.status === "broken") return r.from + " → " + r.to + " · check link";
+  }
   if (r.closes) return r.from + " → " + r.to + " · closes the trunk";
   if (r.opens.length) return r.from + " → " + r.to + " · opens " + r.opens.join(", ");
   return r.from + " → " + r.to + " · opens nothing";
