@@ -14,7 +14,7 @@ const contractPath = join(ROOT, "contracts", contractFile);
 const graph = JSON.parse(readFileSync(contractPath, "utf8"));
 
 const bootSrc = readFileSync(join(ROOT, "template", "volume.boot.js"), "utf8");
-const start = bootSrc.indexOf("function folderName");
+const start = bootSrc.indexOf("function unverifiedTopology");
 const end = bootSrc.indexOf("function focusText");
 if (start < 0 || end < 0) {
   console.error("could not slice verdict helpers from volume.boot.js");
