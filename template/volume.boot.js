@@ -24,7 +24,7 @@ var UNVERIFIED_BANNER =
   "Unverified topology from computed wiring links—not a verified sheaf contradiction.";
 
 function unverifiedTopology() {
-  if (!graph) return false;
+  if (!graph || !imported(graph)) return false;
   var rs = graph.restrictions || [];
   return rs.length > 0 && rs.every(function (r) { return r.status === "strange"; });
 }
@@ -60,8 +60,21 @@ function restrictionById(id) {
   return (graph.restrictions || []).find((r) => r.id === id);
 }
 
+function imported(g) {
+  g = g || graph;
+  if (!g) return false;
+  return Boolean(g["x-sas"]) || !Array.isArray(g.commits);
+}
+
+function isUnverifiedRestriction(r, g) {
+  g = g || graph;
+  if (!r || !g) return false;
+  if (!imported(g)) return false;
+  return r.status === "strange" || r.status === "broken";
+}
+
 function isVerifiedRestriction(r) {
-  return Boolean(r && r.residualMeaning);
+  return !isUnverifiedRestriction(r);
 }
 
 function targetIsMissing(r) {
@@ -83,16 +96,19 @@ function openIds(flipId) {
   return open;
 }
 
-function repairs() {
-  if (!graph) return [];
+function repairs(g) {
+  g = g || graph;
+  if (!g) return [];
   const rank = { broken: 0, missing: 1, strange: 2, ok: 3 };
   const before = openIds();
-  return (graph.restrictions || [])
+  return (g.restrictions || [])
     .filter((r) => r.status !== "ok")
     .map((r) => {
       const after = openIds(r.id);
-      const opens = (graph.pillars || []).filter((p) => !before[p.id] && after[p.id]).map((p) => p.folder);
-      const closes = (graph.pillars || []).every((p) => after[p.id]);
+      const opens = (g.pillars || []).filter((p) => !before[p.id] && after[p.id]).map((p) => p.folder);
+      const closes = (g.pillars || []).every((p) => after[p.id]);
+      const unverified = isUnverifiedRestriction(r, g);
+      const missing = r.status === "broken" && targetIsMissing(r);
       return {
         id: r.id,
         status: r.status,
@@ -101,6 +117,8 @@ function repairs() {
         to: folderName(r.target),
         opens: opens,
         closes: closes,
+        unverified: unverified,
+        missing: missing,
       };
     })
     .sort((a, b) => {
@@ -126,15 +144,14 @@ function verdictText() {
   const n = (graph.pillars || []).length;
   if (!fixes.length) return "Every map commutes. " + open + " folders may fold.";
   const best = fixes[0];
-  const restr = restrictionById(best.id);
-  if (restr && !isVerifiedRestriction(restr)) {
-    if (restr.status === "strange") {
+  if (best.unverified) {
+    if (best.status === "strange") {
       return "Check " + best.from + " → " + best.to + ". Unverified link — needs a person.";
     }
-    if (restr.status === "broken" && targetIsMissing(restr)) {
+    if (best.missing) {
       return "Link to missing page " + best.from + " → " + best.to + ".";
     }
-    if (restr.status === "broken") {
+    if (best.status === "broken") {
       return "Check " + best.from + " → " + best.to + ".";
     }
   }
@@ -144,19 +161,22 @@ function verdictText() {
   return "Fix " + best.from + " → " + best.to + " and " + best.opens.join(", ") + " may fold. " + still + " still closed.";
 }
 
+function repairLabel(fix) {
+  if (fix.unverified) {
+    if (fix.status === "strange") return fix.from + " → " + fix.to + " · check link";
+    if (fix.missing) return fix.from + " → " + fix.to + " · link to missing page";
+    if (fix.status === "broken") return fix.from + " → " + fix.to + " · check link";
+  }
+  if (fix.closes) return fix.from + " → " + fix.to + " · closes the trunk";
+  if (fix.opens.length) return fix.from + " → " + fix.to + " · opens " + fix.opens.join(", ");
+  return fix.from + " → " + fix.to + " · opens nothing";
+}
+
 function rowText(r) {
   if (unverifiedTopology()) {
     return "Check " + r.from + " → " + r.to + " · " + lineOf(r.status);
   }
-  const restr = restrictionById(r.id);
-  if (restr && !isVerifiedRestriction(restr)) {
-    if (restr.status === "strange") return r.from + " → " + r.to + " · check link";
-    if (restr.status === "broken" && targetIsMissing(restr)) return r.from + " → " + r.to + " · link to missing page";
-    if (restr.status === "broken") return r.from + " → " + r.to + " · check link";
-  }
-  if (r.closes) return r.from + " → " + r.to + " · closes the trunk";
-  if (r.opens.length) return r.from + " → " + r.to + " · opens " + r.opens.join(", ");
-  return r.from + " → " + r.to + " · opens nothing";
+  return repairLabel(r);
 }
 
 function focusText(edge) {

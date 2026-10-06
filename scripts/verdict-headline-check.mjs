@@ -29,6 +29,25 @@ if (/may fold/i.test(headline)) {
   console.error(`FAIL ${contractFile}: headline still promises fold: ${headline}`);
   process.exit(1);
 }
+if (/\bfix\b/i.test(headline)) {
+  console.error(`FAIL ${contractFile}: headline still says fix: ${headline}`);
+  process.exit(1);
+}
+
+const janeWithMeaning = JSON.parse(readFileSync(contractPath, "utf8"));
+for (const r of janeWithMeaning.restrictions || []) {
+  r.residualMeaning = r.residualMeaning || "Ingest edge meaning for headline-rule probe.";
+}
+sandbox.graph = janeWithMeaning;
+const janeRmHeadline = sandbox.verdictText();
+if (/\bfix\b/i.test(janeRmHeadline) || /may fold/i.test(janeRmHeadline)) {
+  console.error(`FAIL ${contractFile} with residualMeaning on every edge: ${janeRmHeadline}`);
+  process.exit(1);
+}
+if (!/link to missing page/i.test(janeRmHeadline)) {
+  console.error(`FAIL ${contractFile} with residualMeaning: expected link to missing page: ${janeRmHeadline}`);
+  process.exit(1);
+}
 
 const swarmPath = join(ROOT, "contracts", "swarm.sheaf.json");
 const swarm = JSON.parse(readFileSync(swarmPath, "utf8"));
