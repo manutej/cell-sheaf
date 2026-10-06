@@ -1,0 +1,858 @@
+{
+  "schema": "sheaf-graph/2020-12",
+  "id": "jane-street-puzzles",
+  "title": "Jane Street puzzles wiki",
+  "pillars": [
+    {
+      "id": "page:INDEX.md",
+      "folder": "Jane Street puzzles — Sep 2024 to Sep 2026",
+      "kind": "core",
+      "known": true,
+      "dim": 2,
+      "x": 120,
+      "z": 0
+    },
+    {
+      "id": "page:series/robot.md",
+      "folder": "Robot series",
+      "kind": "core",
+      "known": true,
+      "dim": 2,
+      "x": 113.5,
+      "z": 38.96
+    },
+    {
+      "id": "page:series/tiling.md",
+      "folder": "page:series-tiling.md",
+      "kind": "core",
+      "known": true,
+      "dim": 2,
+      "x": 94.7,
+      "z": 73.71
+    },
+    {
+      "id": "page:series/number-cross.md",
+      "folder": "Number Cross",
+      "kind": "core",
+      "known": true,
+      "dim": 2,
+      "x": 65.63,
+      "z": 100.46
+    },
+    {
+      "id": "page:series/knight-moves.md",
+      "folder": "Knight Moves",
+      "kind": "core",
+      "known": true,
+      "dim": 2,
+      "x": 29.46,
+      "z": 116.33
+    },
+    {
+      "id": "page:series/hooks.md",
+      "folder": "Hooks",
+      "kind": "core",
+      "known": true,
+      "dim": 2,
+      "x": -9.91,
+      "z": 119.59
+    },
+    {
+      "id": "missing:../data/jane-street/puzzles.json",
+      "folder": "missing:..-data-jane-street-puzzles.json",
+      "kind": "lib",
+      "known": false,
+      "dim": 2,
+      "x": -48.2,
+      "z": 109.89
+    },
+    {
+      "id": "missing:../public/index.html",
+      "folder": "missing:..-public-index.html",
+      "kind": "lib",
+      "known": false,
+      "dim": 2,
+      "x": -81.27,
+      "z": 88.29
+    },
+    {
+      "id": "missing:../puzzles/2025-07-robot-road-trip.md",
+      "folder": "missing:..-puzzles-2025-07-robot-road-trip.md",
+      "kind": "lib",
+      "known": false,
+      "dim": 2,
+      "x": -105.54,
+      "z": 57.11
+    },
+    {
+      "id": "missing:../puzzles/2025-10-robot-baseball.md",
+      "folder": "missing:..-puzzles-2025-10-robot-baseball.md",
+      "kind": "lib",
+      "known": false,
+      "dim": 2,
+      "x": -118.36,
+      "z": 19.75
+    },
+    {
+      "id": "missing:../puzzles/2025-12-robot-javelin.md",
+      "folder": "missing:..-puzzles-2025-12-robot-javelin.md",
+      "kind": "lib",
+      "known": false,
+      "dim": 2,
+      "x": -118.36,
+      "z": -19.75
+    },
+    {
+      "id": "missing:../puzzles/2024-09-fences-2.md",
+      "folder": "missing:..-puzzles-2024-09-fences-2.md",
+      "kind": "lib",
+      "known": false,
+      "dim": 2,
+      "x": -105.54,
+      "z": -57.11
+    },
+    {
+      "id": "missing:../puzzles/2025-06-some-ones-somewhere.md",
+      "folder": "missing:..-puzzles-2025-06-some-ones-somewhere.md",
+      "kind": "lib",
+      "known": false,
+      "dim": 2,
+      "x": -81.27,
+      "z": -88.29
+    },
+    {
+      "id": "missing:../puzzles/2026-02-subtiles-2.md",
+      "folder": "missing:..-puzzles-2026-02-subtiles-2.md",
+      "kind": "lib",
+      "known": false,
+      "dim": 2,
+      "x": -48.2,
+      "z": -109.89
+    },
+    {
+      "id": "missing:../puzzles/2026-05-arch-madness.md",
+      "folder": "missing:..-puzzles-2026-05-arch-madness.md",
+      "kind": "lib",
+      "known": false,
+      "dim": 2,
+      "x": -9.91,
+      "z": -119.59
+    },
+    {
+      "id": "missing:../puzzles/2025-05-number-cross-5.md",
+      "folder": "missing:..-puzzles-2025-05-number-cross-5.md",
+      "kind": "lib",
+      "known": false,
+      "dim": 2,
+      "x": 29.46,
+      "z": -116.33
+    },
+    {
+      "id": "missing:../puzzles/2024-10-knight-moves-6.md",
+      "folder": "missing:..-puzzles-2024-10-knight-moves-6.md",
+      "kind": "lib",
+      "known": false,
+      "dim": 2,
+      "x": 65.63,
+      "z": -100.46
+    },
+    {
+      "id": "missing:../puzzles/2026-07-pent-up-frustration-3-knight-moves-7.md",
+      "folder": "missing:..-puzzles-2026-07-pent-up-frustration-3-knight-moves-7.md",
+      "kind": "lib",
+      "known": false,
+      "dim": 2,
+      "x": 94.7,
+      "z": -73.71
+    },
+    {
+      "id": "missing:../puzzles/2025-09-hooks-11.md",
+      "folder": "missing:..-puzzles-2025-09-hooks-11.md",
+      "kind": "lib",
+      "known": false,
+      "dim": 2,
+      "x": 113.5,
+      "z": -38.96
+    }
+  ],
+  "restrictions": [
+    {
+      "id": "e0",
+      "source": "page:INDEX.md",
+      "target": "missing:../data/jane-street/puzzles.json",
+      "relation": "dangling-import",
+      "kind": "projection",
+      "status": "broken",
+      "residual": 1,
+      "note": "target not in this folder"
+    },
+    {
+      "id": "e1",
+      "source": "page:INDEX.md",
+      "target": "missing:../public/index.html",
+      "relation": "dangling-import",
+      "kind": "projection",
+      "status": "broken",
+      "residual": 1,
+      "note": "target not in this folder"
+    },
+    {
+      "id": "e2",
+      "source": "page:INDEX.md",
+      "target": "page:series/hooks.md",
+      "relation": "import",
+      "kind": "projection",
+      "status": "strange",
+      "residual": 0,
+      "note": "resolved import or link"
+    },
+    {
+      "id": "e3",
+      "source": "page:INDEX.md",
+      "target": "page:series/knight-moves.md",
+      "relation": "import",
+      "kind": "projection",
+      "status": "strange",
+      "residual": 0,
+      "note": "resolved import or link"
+    },
+    {
+      "id": "e4",
+      "source": "page:INDEX.md",
+      "target": "page:series/robot.md",
+      "relation": "import",
+      "kind": "projection",
+      "status": "strange",
+      "residual": 0,
+      "note": "resolved import or link"
+    },
+    {
+      "id": "e5",
+      "source": "page:INDEX.md",
+      "target": "page:series/number-cross.md",
+      "relation": "import",
+      "kind": "projection",
+      "status": "strange",
+      "residual": 0,
+      "note": "resolved import or link"
+    },
+    {
+      "id": "e6",
+      "source": "page:INDEX.md",
+      "target": "page:series/tiling.md",
+      "relation": "import",
+      "kind": "projection",
+      "status": "strange",
+      "residual": 0,
+      "note": "resolved import or link"
+    },
+    {
+      "id": "e7",
+      "source": "page:series/robot.md",
+      "target": "missing:../puzzles/2025-07-robot-road-trip.md",
+      "relation": "dangling-import",
+      "kind": "projection",
+      "status": "broken",
+      "residual": 1,
+      "note": "target not in this folder"
+    },
+    {
+      "id": "e8",
+      "source": "page:series/robot.md",
+      "target": "missing:../puzzles/2025-10-robot-baseball.md",
+      "relation": "dangling-import",
+      "kind": "projection",
+      "status": "broken",
+      "residual": 1,
+      "note": "target not in this folder"
+    },
+    {
+      "id": "e9",
+      "source": "page:series/robot.md",
+      "target": "missing:../puzzles/2025-12-robot-javelin.md",
+      "relation": "dangling-import",
+      "kind": "projection",
+      "status": "broken",
+      "residual": 1,
+      "note": "target not in this folder"
+    },
+    {
+      "id": "e10",
+      "source": "page:series/tiling.md",
+      "target": "missing:../puzzles/2024-09-fences-2.md",
+      "relation": "dangling-import",
+      "kind": "projection",
+      "status": "broken",
+      "residual": 1,
+      "note": "target not in this folder"
+    },
+    {
+      "id": "e11",
+      "source": "page:series/tiling.md",
+      "target": "missing:../puzzles/2025-06-some-ones-somewhere.md",
+      "relation": "dangling-import",
+      "kind": "projection",
+      "status": "broken",
+      "residual": 1,
+      "note": "target not in this folder"
+    },
+    {
+      "id": "e12",
+      "source": "page:series/tiling.md",
+      "target": "missing:../puzzles/2026-02-subtiles-2.md",
+      "relation": "dangling-import",
+      "kind": "projection",
+      "status": "broken",
+      "residual": 1,
+      "note": "target not in this folder"
+    },
+    {
+      "id": "e13",
+      "source": "page:series/tiling.md",
+      "target": "missing:../puzzles/2026-05-arch-madness.md",
+      "relation": "dangling-import",
+      "kind": "projection",
+      "status": "broken",
+      "residual": 1,
+      "note": "target not in this folder"
+    },
+    {
+      "id": "e14",
+      "source": "page:series/number-cross.md",
+      "target": "missing:../puzzles/2025-05-number-cross-5.md",
+      "relation": "dangling-import",
+      "kind": "projection",
+      "status": "broken",
+      "residual": 1,
+      "note": "target not in this folder"
+    },
+    {
+      "id": "e15",
+      "source": "page:series/knight-moves.md",
+      "target": "missing:../puzzles/2024-10-knight-moves-6.md",
+      "relation": "dangling-import",
+      "kind": "projection",
+      "status": "broken",
+      "residual": 1,
+      "note": "target not in this folder"
+    },
+    {
+      "id": "e16",
+      "source": "page:series/knight-moves.md",
+      "target": "missing:../puzzles/2026-07-pent-up-frustration-3-knight-moves-7.md",
+      "relation": "dangling-import",
+      "kind": "projection",
+      "status": "broken",
+      "residual": 1,
+      "note": "target not in this folder"
+    },
+    {
+      "id": "e17",
+      "source": "page:series/hooks.md",
+      "target": "missing:../puzzles/2025-09-hooks-11.md",
+      "relation": "dangling-import",
+      "kind": "projection",
+      "status": "broken",
+      "residual": 1,
+      "note": "target not in this folder"
+    }
+  ],
+  "x-sas": {
+    "pillars": {
+      "page:INDEX.md": {
+        "kind": "page",
+        "section": [
+          1,
+          1
+        ],
+        "summary": "INDEX.md",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "page:series/robot.md": {
+        "kind": "page",
+        "section": [
+          1,
+          1
+        ],
+        "summary": "series/robot.md",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "page:series/tiling.md": {
+        "title": "Tiling / Subtiles / Fences",
+        "kind": "page",
+        "section": [
+          1,
+          1
+        ],
+        "summary": "series/tiling.md",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "page:series/number-cross.md": {
+        "kind": "page",
+        "section": [
+          1,
+          1
+        ],
+        "summary": "series/number-cross.md",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "page:series/knight-moves.md": {
+        "kind": "page",
+        "section": [
+          1,
+          1
+        ],
+        "summary": "series/knight-moves.md",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "page:series/hooks.md": {
+        "kind": "page",
+        "section": [
+          1,
+          1
+        ],
+        "summary": "series/hooks.md",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "missing:../data/jane-street/puzzles.json": {
+        "title": "../data/jane-street/puzzles.json",
+        "kind": "missing",
+        "level": 3,
+        "section": [
+          0,
+          0
+        ],
+        "summary": "markdown link with no file in this folder",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "missing:../public/index.html": {
+        "title": "../public/index.html",
+        "kind": "missing",
+        "level": 3,
+        "section": [
+          0,
+          0
+        ],
+        "summary": "markdown link with no file in this folder",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "missing:../puzzles/2025-07-robot-road-trip.md": {
+        "title": "../puzzles/2025-07-robot-road-trip.md",
+        "kind": "missing",
+        "level": 3,
+        "section": [
+          0,
+          0
+        ],
+        "summary": "markdown link with no file in this folder",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "missing:../puzzles/2025-10-robot-baseball.md": {
+        "title": "../puzzles/2025-10-robot-baseball.md",
+        "kind": "missing",
+        "level": 3,
+        "section": [
+          0,
+          0
+        ],
+        "summary": "markdown link with no file in this folder",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "missing:../puzzles/2025-12-robot-javelin.md": {
+        "title": "../puzzles/2025-12-robot-javelin.md",
+        "kind": "missing",
+        "level": 3,
+        "section": [
+          0,
+          0
+        ],
+        "summary": "markdown link with no file in this folder",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "missing:../puzzles/2024-09-fences-2.md": {
+        "title": "../puzzles/2024-09-fences-2.md",
+        "kind": "missing",
+        "level": 3,
+        "section": [
+          0,
+          0
+        ],
+        "summary": "markdown link with no file in this folder",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "missing:../puzzles/2025-06-some-ones-somewhere.md": {
+        "title": "../puzzles/2025-06-some-ones-somewhere.md",
+        "kind": "missing",
+        "level": 3,
+        "section": [
+          0,
+          0
+        ],
+        "summary": "markdown link with no file in this folder",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "missing:../puzzles/2026-02-subtiles-2.md": {
+        "title": "../puzzles/2026-02-subtiles-2.md",
+        "kind": "missing",
+        "level": 3,
+        "section": [
+          0,
+          0
+        ],
+        "summary": "markdown link with no file in this folder",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "missing:../puzzles/2026-05-arch-madness.md": {
+        "title": "../puzzles/2026-05-arch-madness.md",
+        "kind": "missing",
+        "level": 3,
+        "section": [
+          0,
+          0
+        ],
+        "summary": "markdown link with no file in this folder",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "missing:../puzzles/2025-05-number-cross-5.md": {
+        "title": "../puzzles/2025-05-number-cross-5.md",
+        "kind": "missing",
+        "level": 3,
+        "section": [
+          0,
+          0
+        ],
+        "summary": "markdown link with no file in this folder",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "missing:../puzzles/2024-10-knight-moves-6.md": {
+        "title": "../puzzles/2024-10-knight-moves-6.md",
+        "kind": "missing",
+        "level": 3,
+        "section": [
+          0,
+          0
+        ],
+        "summary": "markdown link with no file in this folder",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "missing:../puzzles/2026-07-pent-up-frustration-3-knight-moves-7.md": {
+        "title": "../puzzles/2026-07-pent-up-frustration-3-knight-moves-7.md",
+        "kind": "missing",
+        "level": 3,
+        "section": [
+          0,
+          0
+        ],
+        "summary": "markdown link with no file in this folder",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "missing:../puzzles/2025-09-hooks-11.md": {
+        "title": "../puzzles/2025-09-hooks-11.md",
+        "kind": "missing",
+        "level": 3,
+        "section": [
+          0,
+          0
+        ],
+        "summary": "markdown link with no file in this folder",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      }
+    },
+    "restrictions": {
+      "e0": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "page:INDEX.md\tmissing:../data/jane-street/puzzles.json\t0": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "e1": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "page:INDEX.md\tmissing:../public/index.html\t1": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "e2": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "page:INDEX.md\tpage:series/hooks.md\t2": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "e3": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "page:INDEX.md\tpage:series/knight-moves.md\t3": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "e4": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "page:INDEX.md\tpage:series/robot.md\t4": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "e5": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "page:INDEX.md\tpage:series/number-cross.md\t5": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "e6": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "page:INDEX.md\tpage:series/tiling.md\t6": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "e7": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "page:series/robot.md\tmissing:../puzzles/2025-07-robot-road-trip.md\t7": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "e8": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "page:series/robot.md\tmissing:../puzzles/2025-10-robot-baseball.md\t8": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "e9": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "page:series/robot.md\tmissing:../puzzles/2025-12-robot-javelin.md\t9": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "e10": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "page:series/tiling.md\tmissing:../puzzles/2024-09-fences-2.md\t10": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "e11": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "page:series/tiling.md\tmissing:../puzzles/2025-06-some-ones-somewhere.md\t11": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "e12": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "page:series/tiling.md\tmissing:../puzzles/2026-02-subtiles-2.md\t12": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "e13": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "page:series/tiling.md\tmissing:../puzzles/2026-05-arch-madness.md\t13": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "e14": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "page:series/number-cross.md\tmissing:../puzzles/2025-05-number-cross-5.md\t14": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "e15": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "page:series/knight-moves.md\tmissing:../puzzles/2024-10-knight-moves-6.md\t15": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "e16": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "page:series/knight-moves.md\tmissing:../puzzles/2026-07-pent-up-frustration-3-knight-moves-7.md\t16": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "e17": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      },
+      "page:series/hooks.md\tmissing:../puzzles/2025-09-hooks-11.md\t17": {
+        "usePredicate": false,
+        "_generated": [
+          "id"
+        ]
+      }
+    },
+    "levels": [
+      {
+        "id": 0,
+        "label": "Modules / pages"
+      },
+      {
+        "id": 1,
+        "label": "Symbols"
+      },
+      {
+        "id": 2,
+        "label": "Tests"
+      },
+      {
+        "id": 3,
+        "label": "Missing targets"
+      }
+    ],
+    "kicker": "19 parts · 18 observed links · 5 teal · 13 terracotta",
+    "blurb": "Typed index of jane-street-puzzles. A node is a module, symbol, or page you can open. Teal = the import or link resolves inside this folder. Terracotta = it does not.",
+    "residualMeaning": "The import or markdown link on the left does not resolve to a file or symbol in this folder."
+  }
+}
