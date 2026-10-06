@@ -20,6 +20,23 @@ function hit(px, py) {
   return best;
 }
 
+var UNVERIFIED_BANNER =
+  "Unverified topology from computed wiring links—not a verified sheaf contradiction.";
+
+function unverifiedTopology() {
+  if (!graph) return false;
+  var rs = graph.restrictions || [];
+  return rs.length > 0 && rs.every(function (r) { return r.status === "strange"; });
+}
+
+function syncTopologyBanner() {
+  var el = document.getElementById("topology-banner");
+  if (!el) return;
+  var show = unverifiedTopology() && !pin;
+  el.hidden = !show;
+  el.textContent = show ? UNVERIFIED_BANNER : "";
+}
+
 function meaning(st) {
   if (st === "ok") return "Legal trunk edge. Compose equals collapse.";
   if (st === "strange") return "Map exists but rank or sort is odd. Needs a person.";
@@ -85,6 +102,10 @@ function closedNames(flipId) {
 
 function verdictText() {
   if (!graph) return "";
+  if (unverifiedTopology()) {
+    var linkCount = (graph.restrictions || []).length;
+    return linkCount + " computed links, all unverified. No contradiction is claimed.";
+  }
   const fixes = repairs();
   const open = (graph.pillars || []).filter((p) => openIds()[p.id]).length;
   const n = (graph.pillars || []).length;
@@ -97,6 +118,9 @@ function verdictText() {
 }
 
 function rowText(r) {
+  if (unverifiedTopology()) {
+    return "Check " + r.from + " → " + r.to + " · " + lineOf(r.status);
+  }
   if (r.closes) return r.from + " → " + r.to + " · closes the trunk";
   if (r.opens.length) return r.from + " → " + r.to + " · opens " + r.opens.join(", ");
   return r.from + " → " + r.to + " · opens nothing";
@@ -130,10 +154,13 @@ function panel(h) {
   const tb = document.getElementById("tb");
   const body = document.getElementById("tbody");
   if (!h) {
+    syncTopologyBanner();
     const blocks = repairs();
-    pt.textContent = "Look here";
+    pt.textContent = unverifiedTopology() ? "Check these" : "Look here";
     pm.textContent = BLURB[view];
-    pa.textContent = verdictText();
+    pa.textContent = unverifiedTopology()
+      ? UNVERIFIED_BANNER + " " + ((graph.restrictions[0] && graph.restrictions[0].residualMeaning) || "")
+      : verdictText();
     tb.hidden = !blocks.length;
     body.replaceChildren();
     blocks.slice(0, 6).forEach((r) => {
@@ -158,6 +185,7 @@ function panel(h) {
     });
     return;
   }
+  syncTopologyBanner();
   if (h.k === "edge") {
     const e = h.e;
     pt.textContent = (e.a.folder || e.s) + " → " + (e.b.folder || e.t);
@@ -207,6 +235,7 @@ function panel(h) {
 
 function stats() {
   if (!graph) return;
+  syncTopologyBanner();
   const blocks = repairs();
   const open = (graph.pillars || []).filter((p) => openIds()[p.id]).length;
   document.getElementById("sn").textContent = (graph.restrictions || []).length;
