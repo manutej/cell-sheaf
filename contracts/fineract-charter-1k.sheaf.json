@@ -1,0 +1,3371 @@
+{
+  "schema": "sheaf-graph/2020-12",
+  "id": "fineract-charter-1k",
+  "title": "29 @CommandType handlers (~1k LOC chartered vertical)",
+  "pillars": [
+    {
+      "id": "unit:handler.AddLoanChargeCommandHandler",
+      "folder": "AddLoanChargeCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": 120,
+      "z": 0
+    },
+    {
+      "id": "unit:handler.AttachLoanOriginatorCommandHandler",
+      "folder": "AttachLoanOriginatorCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": 119.22,
+      "z": 13.68
+    },
+    {
+      "id": "unit:handler.BulkUpdateLoanOfficerCommandHandler",
+      "folder": "BulkUpdateLoanOfficerCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": 116.88,
+      "z": 27.18
+    },
+    {
+      "id": "unit:handler.CloseLoanCommandHandler",
+      "folder": "CloseLoanCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": 113.02,
+      "z": 40.33
+    },
+    {
+      "id": "unit:handler.CreateDelinquencyRangeCommandHandler",
+      "folder": "CreateDelinquencyRangeCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": 107.69,
+      "z": 52.95
+    },
+    {
+      "id": "unit:handler.CreditBalanceRefundCommandHandler",
+      "folder": "CreditBalanceRefundCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": 100.95,
+      "z": 64.88
+    },
+    {
+      "id": "unit:handler.DetachLoanOriginatorCommandHandler",
+      "folder": "DetachLoanOriginatorCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": 92.9,
+      "z": 75.96
+    },
+    {
+      "id": "unit:handler.DisburseLoanCommandHandler",
+      "folder": "DisburseLoanCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": 83.63,
+      "z": 86.06
+    },
+    {
+      "id": "unit:handler.DisburseLoanToSavingsCommandHandler",
+      "folder": "DisburseLoanToSavingsCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": 73.28,
+      "z": 95.03
+    },
+    {
+      "id": "unit:handler.ForeClosureCommandHandler",
+      "folder": "ForeClosureCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": 61.97,
+      "z": 102.76
+    },
+    {
+      "id": "unit:handler.GLIMApplicationRejectionCommandHandler",
+      "folder": "GLIMApplicationRejectionCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": 49.85,
+      "z": 109.16
+    },
+    {
+      "id": "unit:handler.LoanApplicationModificationCommandHandler",
+      "folder": "LoanApplicationModificationCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": 37.08,
+      "z": 114.13
+    },
+    {
+      "id": "unit:handler.LoanApplicationSubmittalCommandHandler",
+      "folder": "LoanApplicationSubmittalCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": 23.83,
+      "z": 117.61
+    },
+    {
+      "id": "unit:handler.LoanApplicationWithdrawnByApplicantCommandHandler",
+      "folder": "LoanApplicationWithdrawnByApplicantCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": 10.27,
+      "z": 119.56
+    },
+    {
+      "id": "unit:handler.LoanApprovedAmountModificationCommandHandler",
+      "folder": "LoanApprovedAmountModificationCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": -3.43,
+      "z": 119.95
+    },
+    {
+      "id": "unit:handler.LoanGoodwillCreditCommandHandler",
+      "folder": "LoanGoodwillCreditCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": -17.08,
+      "z": 118.78
+    },
+    {
+      "id": "unit:handler.LoanMerchantIssuedRefundCommandHandler",
+      "folder": "LoanMerchantIssuedRefundCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": -30.51,
+      "z": 116.06
+    },
+    {
+      "id": "unit:handler.LoanRefundByCashCommandHandler",
+      "folder": "LoanRefundByCashCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": -43.54,
+      "z": 111.82
+    },
+    {
+      "id": "unit:handler.LoanRepaymentChargebackCommandHandler",
+      "folder": "LoanRepaymentChargebackCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": -56,
+      "z": 106.13
+    },
+    {
+      "id": "unit:handler.MarkLoanAsFraudCommandHandler",
+      "folder": "MarkLoanAsFraudCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": -67.73,
+      "z": 99.06
+    },
+    {
+      "id": "unit:handler.RejectAddtionalSharesCommandHandler",
+      "folder": "RejectAddtionalSharesCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": -78.58,
+      "z": 90.69
+    },
+    {
+      "id": "unit:handler.SaveCenterCollectionSheetCommandHandler",
+      "folder": "SaveCenterCollectionSheetCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": -88.41,
+      "z": 81.14
+    },
+    {
+      "id": "unit:handler.UpdateChargeDefinitionCommandHandler",
+      "folder": "UpdateChargeDefinitionCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": -97.08,
+      "z": 70.53
+    },
+    {
+      "id": "unit:handler.UpdateDelinquencyBucketCommandHandler",
+      "folder": "UpdateDelinquencyBucketCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": -104.49,
+      "z": 59.01
+    },
+    {
+      "id": "unit:handler.UpdateDelinquencyRangeCommandHandler",
+      "folder": "UpdateDelinquencyRangeCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": -110.53,
+      "z": 46.71
+    },
+    {
+      "id": "unit:handler.UpdateInterestPauseCommandHandler",
+      "folder": "UpdateInterestPauseCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": -115.14,
+      "z": 33.81
+    },
+    {
+      "id": "unit:handler.UpdateLoanDelinquencyBucketCommandHandler",
+      "folder": "UpdateLoanDelinquencyBucketCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": -118.24,
+      "z": 20.46
+    },
+    {
+      "id": "unit:handler.WithdrawClientTransferCommandHandler",
+      "folder": "WithdrawClientTransferCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": -119.8,
+      "z": 6.85
+    },
+    {
+      "id": "unit:handler.WorkingCapitalLoanRecoveryPaymentCommandHandler",
+      "folder": "WorkingCapitalLoanRecoveryPaymentCommandHandler",
+      "kind": "core",
+      "known": false,
+      "dim": 1,
+      "x": -119.8,
+      "z": -6.85
+    },
+    {
+      "id": "junction:infrastructure.DataIntegrityErrorHandler",
+      "folder": "infrastructure.DataIntegrityErrorHandler",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": -118.24,
+      "z": -20.46
+    },
+    {
+      "id": "junction:infrastructure.core.api.JsonCommand",
+      "folder": "infrastructure.core.api.JsonCommand",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": -115.14,
+      "z": -33.81
+    },
+    {
+      "id": "junction:LoanChargeWritePlatformService",
+      "folder": "LoanChargeWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": -110.53,
+      "z": -46.71
+    },
+    {
+      "id": "junction:portfolio.loanaccount.service.LoanChargeWritePlatformService",
+      "folder": "portfolio.loanaccount.service.LoanChargeWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": -104.49,
+      "z": -59.01
+    },
+    {
+      "id": "junction:LoanOriginatorWritePlatformService",
+      "folder": "LoanOriginatorWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": -97.08,
+      "z": -70.53
+    },
+    {
+      "id": "junction:portfolio.loanorigination.service.LoanOriginatorWritePlatformService",
+      "folder": "portfolio.loanorigination.service.LoanOriginatorWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": -88.41,
+      "z": -81.14
+    },
+    {
+      "id": "junction:LoanWritePlatformService",
+      "folder": "LoanWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": -78.58,
+      "z": -90.69
+    },
+    {
+      "id": "junction:portfolio.loanaccount.service.LoanWritePlatformService",
+      "folder": "portfolio.loanaccount.service.LoanWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": -67.73,
+      "z": -99.06
+    },
+    {
+      "id": "junction:DelinquencyWritePlatformService",
+      "folder": "DelinquencyWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": -56,
+      "z": -106.13
+    },
+    {
+      "id": "junction:portfolio.delinquency.service.DelinquencyWritePlatformService",
+      "folder": "portfolio.delinquency.service.DelinquencyWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": -43.54,
+      "z": -111.82
+    },
+    {
+      "id": "junction:LoanApplicationWritePlatformService",
+      "folder": "LoanApplicationWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": -30.51,
+      "z": -116.06
+    },
+    {
+      "id": "junction:portfolio.loanaccount.service.LoanApplicationWritePlatformService",
+      "folder": "portfolio.loanaccount.service.LoanApplicationWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": -17.08,
+      "z": -118.78
+    },
+    {
+      "id": "junction:LoanApprovedAmountWritePlatformService",
+      "folder": "LoanApprovedAmountWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": -3.43,
+      "z": -119.95
+    },
+    {
+      "id": "junction:portfolio.loanaccount.service.LoanApprovedAmountWritePlatformService",
+      "folder": "portfolio.loanaccount.service.LoanApprovedAmountWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": 10.27,
+      "z": -119.56
+    },
+    {
+      "id": "junction:ShareAccountWritePlatformService",
+      "folder": "ShareAccountWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": 23.83,
+      "z": -117.61
+    },
+    {
+      "id": "junction:portfolio.shareaccounts.service.ShareAccountWritePlatformService",
+      "folder": "portfolio.shareaccounts.service.ShareAccountWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": 37.08,
+      "z": -114.13
+    },
+    {
+      "id": "junction:CollectionSheetWritePlatformService",
+      "folder": "CollectionSheetWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": 49.85,
+      "z": -109.16
+    },
+    {
+      "id": "junction:portfolio.collectionsheet.service.CollectionSheetWritePlatformService",
+      "folder": "portfolio.collectionsheet.service.CollectionSheetWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": 61.97,
+      "z": -102.76
+    },
+    {
+      "id": "junction:ChargeWritePlatformService",
+      "folder": "ChargeWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": 73.28,
+      "z": -95.03
+    },
+    {
+      "id": "junction:portfolio.charge.service.ChargeWritePlatformService",
+      "folder": "portfolio.charge.service.ChargeWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": 83.63,
+      "z": -86.06
+    },
+    {
+      "id": "junction:InterestPauseWritePlatformService",
+      "folder": "InterestPauseWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": 92.9,
+      "z": -75.96
+    },
+    {
+      "id": "junction:portfolio.interestpauses.service.InterestPauseWritePlatformService",
+      "folder": "portfolio.interestpauses.service.InterestPauseWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": 100.95,
+      "z": -64.88
+    },
+    {
+      "id": "junction:TransferWritePlatformService",
+      "folder": "TransferWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": 107.69,
+      "z": -52.95
+    },
+    {
+      "id": "junction:portfolio.transfer.service.TransferWritePlatformService",
+      "folder": "portfolio.transfer.service.TransferWritePlatformService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": 113.02,
+      "z": -40.33
+    },
+    {
+      "id": "junction:WorkingCapitalLoanRecoveryPaymentWriteService",
+      "folder": "WorkingCapitalLoanRecoveryPaymentWriteService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": 116.88,
+      "z": -27.18
+    },
+    {
+      "id": "junction:portfolio.workingcapitalloan.service.WorkingCapitalLoanRecoveryPaymentWriteService",
+      "folder": "portfolio.workingcapitalloan.service.WorkingCapitalLoanRecoveryPaymentWriteService",
+      "kind": "lib",
+      "known": false,
+      "dim": 1,
+      "x": 119.22,
+      "z": -13.68
+    }
+  ],
+  "restrictions": [
+    {
+      "id": "e0",
+      "source": "unit:handler.AddLoanChargeCommandHandler",
+      "target": "junction:LoanChargeWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e1",
+      "source": "unit:handler.AddLoanChargeCommandHandler",
+      "target": "junction:infrastructure.DataIntegrityErrorHandler",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e2",
+      "source": "unit:handler.AddLoanChargeCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e3",
+      "source": "unit:handler.AddLoanChargeCommandHandler",
+      "target": "junction:portfolio.loanaccount.service.LoanChargeWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e4",
+      "source": "unit:handler.AttachLoanOriginatorCommandHandler",
+      "target": "junction:LoanOriginatorWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e5",
+      "source": "unit:handler.AttachLoanOriginatorCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 2 wiring edges",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e6",
+      "source": "unit:handler.AttachLoanOriginatorCommandHandler",
+      "target": "junction:portfolio.loanorigination.service.LoanOriginatorWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e7",
+      "source": "unit:handler.BulkUpdateLoanOfficerCommandHandler",
+      "target": "junction:LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e8",
+      "source": "unit:handler.BulkUpdateLoanOfficerCommandHandler",
+      "target": "junction:portfolio.loanaccount.service.LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e9",
+      "source": "unit:handler.CloseLoanCommandHandler",
+      "target": "junction:LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e10",
+      "source": "unit:handler.CloseLoanCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e11",
+      "source": "unit:handler.CloseLoanCommandHandler",
+      "target": "junction:portfolio.loanaccount.service.LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e12",
+      "source": "unit:handler.CreateDelinquencyRangeCommandHandler",
+      "target": "junction:DelinquencyWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e13",
+      "source": "unit:handler.CreateDelinquencyRangeCommandHandler",
+      "target": "junction:portfolio.delinquency.service.DelinquencyWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e14",
+      "source": "unit:handler.CreditBalanceRefundCommandHandler",
+      "target": "junction:LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e15",
+      "source": "unit:handler.CreditBalanceRefundCommandHandler",
+      "target": "junction:infrastructure.DataIntegrityErrorHandler",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e16",
+      "source": "unit:handler.CreditBalanceRefundCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e17",
+      "source": "unit:handler.CreditBalanceRefundCommandHandler",
+      "target": "junction:portfolio.loanaccount.service.LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e18",
+      "source": "unit:handler.DetachLoanOriginatorCommandHandler",
+      "target": "junction:LoanOriginatorWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e19",
+      "source": "unit:handler.DetachLoanOriginatorCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 2 wiring edges",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e20",
+      "source": "unit:handler.DetachLoanOriginatorCommandHandler",
+      "target": "junction:portfolio.loanorigination.service.LoanOriginatorWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e21",
+      "source": "unit:handler.DisburseLoanCommandHandler",
+      "target": "junction:LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e22",
+      "source": "unit:handler.DisburseLoanCommandHandler",
+      "target": "junction:infrastructure.DataIntegrityErrorHandler",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e23",
+      "source": "unit:handler.DisburseLoanCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e24",
+      "source": "unit:handler.DisburseLoanCommandHandler",
+      "target": "junction:portfolio.loanaccount.service.LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e25",
+      "source": "unit:handler.DisburseLoanToSavingsCommandHandler",
+      "target": "junction:LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e26",
+      "source": "unit:handler.DisburseLoanToSavingsCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e27",
+      "source": "unit:handler.DisburseLoanToSavingsCommandHandler",
+      "target": "junction:portfolio.loanaccount.service.LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e28",
+      "source": "unit:handler.ForeClosureCommandHandler",
+      "target": "junction:LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e29",
+      "source": "unit:handler.ForeClosureCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e30",
+      "source": "unit:handler.ForeClosureCommandHandler",
+      "target": "junction:portfolio.loanaccount.service.LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e31",
+      "source": "unit:handler.GLIMApplicationRejectionCommandHandler",
+      "target": "junction:LoanApplicationWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e32",
+      "source": "unit:handler.GLIMApplicationRejectionCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e33",
+      "source": "unit:handler.GLIMApplicationRejectionCommandHandler",
+      "target": "junction:portfolio.loanaccount.service.LoanApplicationWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e34",
+      "source": "unit:handler.LoanApplicationModificationCommandHandler",
+      "target": "junction:LoanApplicationWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e35",
+      "source": "unit:handler.LoanApplicationModificationCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e36",
+      "source": "unit:handler.LoanApplicationModificationCommandHandler",
+      "target": "junction:portfolio.loanaccount.service.LoanApplicationWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e37",
+      "source": "unit:handler.LoanApplicationSubmittalCommandHandler",
+      "target": "junction:LoanApplicationWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e38",
+      "source": "unit:handler.LoanApplicationSubmittalCommandHandler",
+      "target": "junction:portfolio.loanaccount.service.LoanApplicationWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e39",
+      "source": "unit:handler.LoanApplicationWithdrawnByApplicantCommandHandler",
+      "target": "junction:LoanApplicationWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e40",
+      "source": "unit:handler.LoanApplicationWithdrawnByApplicantCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e41",
+      "source": "unit:handler.LoanApplicationWithdrawnByApplicantCommandHandler",
+      "target": "junction:portfolio.loanaccount.service.LoanApplicationWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e42",
+      "source": "unit:handler.LoanApprovedAmountModificationCommandHandler",
+      "target": "junction:LoanApprovedAmountWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e43",
+      "source": "unit:handler.LoanApprovedAmountModificationCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e44",
+      "source": "unit:handler.LoanApprovedAmountModificationCommandHandler",
+      "target": "junction:portfolio.loanaccount.service.LoanApprovedAmountWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e45",
+      "source": "unit:handler.LoanGoodwillCreditCommandHandler",
+      "target": "junction:LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e46",
+      "source": "unit:handler.LoanGoodwillCreditCommandHandler",
+      "target": "junction:infrastructure.DataIntegrityErrorHandler",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e47",
+      "source": "unit:handler.LoanGoodwillCreditCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e48",
+      "source": "unit:handler.LoanGoodwillCreditCommandHandler",
+      "target": "junction:portfolio.loanaccount.service.LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e49",
+      "source": "unit:handler.LoanMerchantIssuedRefundCommandHandler",
+      "target": "junction:LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e50",
+      "source": "unit:handler.LoanMerchantIssuedRefundCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e51",
+      "source": "unit:handler.LoanMerchantIssuedRefundCommandHandler",
+      "target": "junction:portfolio.loanaccount.service.LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e52",
+      "source": "unit:handler.LoanRefundByCashCommandHandler",
+      "target": "junction:LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e53",
+      "source": "unit:handler.LoanRefundByCashCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e54",
+      "source": "unit:handler.LoanRefundByCashCommandHandler",
+      "target": "junction:portfolio.loanaccount.service.LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e55",
+      "source": "unit:handler.LoanRepaymentChargebackCommandHandler",
+      "target": "junction:LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e56",
+      "source": "unit:handler.LoanRepaymentChargebackCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 2 wiring edges",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e57",
+      "source": "unit:handler.LoanRepaymentChargebackCommandHandler",
+      "target": "junction:portfolio.loanaccount.service.LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e58",
+      "source": "unit:handler.MarkLoanAsFraudCommandHandler",
+      "target": "junction:LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e59",
+      "source": "unit:handler.MarkLoanAsFraudCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e60",
+      "source": "unit:handler.MarkLoanAsFraudCommandHandler",
+      "target": "junction:portfolio.loanaccount.service.LoanWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e61",
+      "source": "unit:handler.RejectAddtionalSharesCommandHandler",
+      "target": "junction:ShareAccountWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e62",
+      "source": "unit:handler.RejectAddtionalSharesCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e63",
+      "source": "unit:handler.RejectAddtionalSharesCommandHandler",
+      "target": "junction:portfolio.shareaccounts.service.ShareAccountWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e64",
+      "source": "unit:handler.SaveCenterCollectionSheetCommandHandler",
+      "target": "junction:CollectionSheetWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e65",
+      "source": "unit:handler.SaveCenterCollectionSheetCommandHandler",
+      "target": "junction:portfolio.collectionsheet.service.CollectionSheetWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e66",
+      "source": "unit:handler.UpdateChargeDefinitionCommandHandler",
+      "target": "junction:ChargeWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e67",
+      "source": "unit:handler.UpdateChargeDefinitionCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e68",
+      "source": "unit:handler.UpdateChargeDefinitionCommandHandler",
+      "target": "junction:portfolio.charge.service.ChargeWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e69",
+      "source": "unit:handler.UpdateDelinquencyBucketCommandHandler",
+      "target": "junction:DelinquencyWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e70",
+      "source": "unit:handler.UpdateDelinquencyBucketCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e71",
+      "source": "unit:handler.UpdateDelinquencyBucketCommandHandler",
+      "target": "junction:portfolio.delinquency.service.DelinquencyWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e72",
+      "source": "unit:handler.UpdateDelinquencyRangeCommandHandler",
+      "target": "junction:DelinquencyWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e73",
+      "source": "unit:handler.UpdateDelinquencyRangeCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e74",
+      "source": "unit:handler.UpdateDelinquencyRangeCommandHandler",
+      "target": "junction:portfolio.delinquency.service.DelinquencyWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e75",
+      "source": "unit:handler.UpdateInterestPauseCommandHandler",
+      "target": "junction:InterestPauseWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e76",
+      "source": "unit:handler.UpdateInterestPauseCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e77",
+      "source": "unit:handler.UpdateInterestPauseCommandHandler",
+      "target": "junction:portfolio.interestpauses.service.InterestPauseWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e78",
+      "source": "unit:handler.UpdateLoanDelinquencyBucketCommandHandler",
+      "target": "junction:DelinquencyWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e79",
+      "source": "unit:handler.UpdateLoanDelinquencyBucketCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e80",
+      "source": "unit:handler.UpdateLoanDelinquencyBucketCommandHandler",
+      "target": "junction:portfolio.delinquency.service.DelinquencyWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e81",
+      "source": "unit:handler.WithdrawClientTransferCommandHandler",
+      "target": "junction:TransferWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e82",
+      "source": "unit:handler.WithdrawClientTransferCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e83",
+      "source": "unit:handler.WithdrawClientTransferCommandHandler",
+      "target": "junction:portfolio.transfer.service.TransferWritePlatformService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e84",
+      "source": "unit:handler.WorkingCapitalLoanRecoveryPaymentCommandHandler",
+      "target": "junction:WorkingCapitalLoanRecoveryPaymentWriteService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e85",
+      "source": "unit:handler.WorkingCapitalLoanRecoveryPaymentCommandHandler",
+      "target": "junction:infrastructure.core.api.JsonCommand",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    },
+    {
+      "id": "e86",
+      "source": "unit:handler.WorkingCapitalLoanRecoveryPaymentCommandHandler",
+      "target": "junction:portfolio.workingcapitalloan.service.WorkingCapitalLoanRecoveryPaymentWriteService",
+      "relation": "di",
+      "kind": "identity",
+      "status": "strange",
+      "residual": 0,
+      "note": "merged 1 wiring edge",
+      "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+    }
+  ],
+  "x-sas": {
+    "pillars": {
+      "unit:handler.AddLoanChargeCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOANCHARGE CREATE",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/AddLoanChargeCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.AttachLoanOriginatorCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN_ORIGINATOR ATTACH",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/AttachLoanOriginatorCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.BulkUpdateLoanOfficerCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN BULKREASSIGN",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/BulkUpdateLoanOfficerCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.CloseLoanCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN CLOSE",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/CloseLoanCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.CreateDelinquencyRangeCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — DELINQUENCY_RANGE CREATE",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/CreateDelinquencyRangeCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.CreditBalanceRefundCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN CREDITBALANCEREFUND",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/CreditBalanceRefundCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.DetachLoanOriginatorCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN_ORIGINATOR DETACH",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/DetachLoanOriginatorCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.DisburseLoanCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN DISBURSE",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/DisburseLoanCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.DisburseLoanToSavingsCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN DISBURSETOSAVINGS",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/DisburseLoanToSavingsCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.ForeClosureCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN FORECLOSURE",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/ForeClosureCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.GLIMApplicationRejectionCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — GLIMLOAN REJECT",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/GLIMApplicationRejectionCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.LoanApplicationModificationCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN UPDATE",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/LoanApplicationModificationCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.LoanApplicationSubmittalCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN CREATE",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/LoanApplicationSubmittalCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.LoanApplicationWithdrawnByApplicantCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN WITHDRAW",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/LoanApplicationWithdrawnByApplicantCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.LoanApprovedAmountModificationCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN UPDATE_APPROVED_AMOUNT",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/LoanApprovedAmountModificationCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.LoanGoodwillCreditCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN GOODWILLCREDIT",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/LoanGoodwillCreditCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.LoanMerchantIssuedRefundCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN MERCHANTISSUEDREFUND",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/LoanMerchantIssuedRefundCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.LoanRefundByCashCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN REFUNDBYCASH",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/LoanRefundByCashCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.LoanRepaymentChargebackCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN CHARGEBACK",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/LoanRepaymentChargebackCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.MarkLoanAsFraudCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN SETFRAUD",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/MarkLoanAsFraudCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.RejectAddtionalSharesCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — SHAREACCOUNT REJECTADDITIONALSHARES",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/RejectAddtionalSharesCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.SaveCenterCollectionSheetCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — CENTER SAVECOLLECTIONSHEET",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/SaveCenterCollectionSheetCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.UpdateChargeDefinitionCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — CHARGE UPDATE",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/UpdateChargeDefinitionCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.UpdateDelinquencyBucketCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — DELINQUENCY_BUCKET UPDATE",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/UpdateDelinquencyBucketCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.UpdateDelinquencyRangeCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — DELINQUENCY_RANGE UPDATE",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/UpdateDelinquencyRangeCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.UpdateInterestPauseCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN UPDATEINTERESTPAUSE",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/UpdateInterestPauseCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.UpdateLoanDelinquencyBucketCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — LOAN UPDATEDELINQUENCY",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/UpdateLoanDelinquencyBucketCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.WithdrawClientTransferCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — CLIENT WITHDRAWTRANSFER",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/WithdrawClientTransferCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "unit:handler.WorkingCapitalLoanRecoveryPaymentCommandHandler": {
+        "kind": "module",
+        "summary": "Command handler — WORKINGCAPITALLOAN RECOVERYPAYMENT",
+        "sources": [
+          "fixtures/external/fineract-charter-1k/WorkingCapitalLoanRecoveryPaymentCommandHandler.java"
+        ],
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:infrastructure.DataIntegrityErrorHandler": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:infrastructure.core.api.JsonCommand": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:LoanChargeWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:portfolio.loanaccount.service.LoanChargeWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:LoanOriginatorWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:portfolio.loanorigination.service.LoanOriginatorWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:LoanWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:portfolio.loanaccount.service.LoanWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:DelinquencyWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:portfolio.delinquency.service.DelinquencyWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:LoanApplicationWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:portfolio.loanaccount.service.LoanApplicationWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:LoanApprovedAmountWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:portfolio.loanaccount.service.LoanApprovedAmountWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:ShareAccountWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:portfolio.shareaccounts.service.ShareAccountWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:CollectionSheetWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:portfolio.collectionsheet.service.CollectionSheetWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:ChargeWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:portfolio.charge.service.ChargeWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:InterestPauseWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:portfolio.interestpauses.service.InterestPauseWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:TransferWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:portfolio.transfer.service.TransferWritePlatformService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:WorkingCapitalLoanRecoveryPaymentWriteService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      },
+      "junction:portfolio.workingcapitalloan.service.WorkingCapitalLoanRecoveryPaymentWriteService": {
+        "kind": "api",
+        "_generated": [
+          "x",
+          "z"
+        ]
+      }
+    },
+    "restrictions": {
+      "e0": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.AddLoanChargeCommandHandler\tjunction:LoanChargeWritePlatformService\t0": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e1": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.AddLoanChargeCommandHandler\tjunction:infrastructure.DataIntegrityErrorHandler\t1": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e2": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.AddLoanChargeCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t2": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e3": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.AddLoanChargeCommandHandler\tjunction:portfolio.loanaccount.service.LoanChargeWritePlatformService\t3": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e4": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.AttachLoanOriginatorCommandHandler\tjunction:LoanOriginatorWritePlatformService\t4": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e5": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.AttachLoanOriginatorCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t5": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e6": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.AttachLoanOriginatorCommandHandler\tjunction:portfolio.loanorigination.service.LoanOriginatorWritePlatformService\t6": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e7": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.BulkUpdateLoanOfficerCommandHandler\tjunction:LoanWritePlatformService\t7": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e8": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.BulkUpdateLoanOfficerCommandHandler\tjunction:portfolio.loanaccount.service.LoanWritePlatformService\t8": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e9": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.CloseLoanCommandHandler\tjunction:LoanWritePlatformService\t9": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e10": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.CloseLoanCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t10": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e11": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.CloseLoanCommandHandler\tjunction:portfolio.loanaccount.service.LoanWritePlatformService\t11": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e12": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.CreateDelinquencyRangeCommandHandler\tjunction:DelinquencyWritePlatformService\t12": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e13": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.CreateDelinquencyRangeCommandHandler\tjunction:portfolio.delinquency.service.DelinquencyWritePlatformService\t13": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e14": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.CreditBalanceRefundCommandHandler\tjunction:LoanWritePlatformService\t14": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e15": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.CreditBalanceRefundCommandHandler\tjunction:infrastructure.DataIntegrityErrorHandler\t15": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e16": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.CreditBalanceRefundCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t16": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e17": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.CreditBalanceRefundCommandHandler\tjunction:portfolio.loanaccount.service.LoanWritePlatformService\t17": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e18": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.DetachLoanOriginatorCommandHandler\tjunction:LoanOriginatorWritePlatformService\t18": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e19": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.DetachLoanOriginatorCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t19": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e20": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.DetachLoanOriginatorCommandHandler\tjunction:portfolio.loanorigination.service.LoanOriginatorWritePlatformService\t20": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e21": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.DisburseLoanCommandHandler\tjunction:LoanWritePlatformService\t21": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e22": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.DisburseLoanCommandHandler\tjunction:infrastructure.DataIntegrityErrorHandler\t22": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e23": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.DisburseLoanCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t23": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e24": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.DisburseLoanCommandHandler\tjunction:portfolio.loanaccount.service.LoanWritePlatformService\t24": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e25": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.DisburseLoanToSavingsCommandHandler\tjunction:LoanWritePlatformService\t25": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e26": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.DisburseLoanToSavingsCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t26": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e27": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.DisburseLoanToSavingsCommandHandler\tjunction:portfolio.loanaccount.service.LoanWritePlatformService\t27": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e28": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.ForeClosureCommandHandler\tjunction:LoanWritePlatformService\t28": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e29": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.ForeClosureCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t29": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e30": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.ForeClosureCommandHandler\tjunction:portfolio.loanaccount.service.LoanWritePlatformService\t30": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e31": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.GLIMApplicationRejectionCommandHandler\tjunction:LoanApplicationWritePlatformService\t31": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e32": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.GLIMApplicationRejectionCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t32": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e33": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.GLIMApplicationRejectionCommandHandler\tjunction:portfolio.loanaccount.service.LoanApplicationWritePlatformService\t33": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e34": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanApplicationModificationCommandHandler\tjunction:LoanApplicationWritePlatformService\t34": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e35": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanApplicationModificationCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t35": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e36": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanApplicationModificationCommandHandler\tjunction:portfolio.loanaccount.service.LoanApplicationWritePlatformService\t36": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e37": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanApplicationSubmittalCommandHandler\tjunction:LoanApplicationWritePlatformService\t37": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e38": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanApplicationSubmittalCommandHandler\tjunction:portfolio.loanaccount.service.LoanApplicationWritePlatformService\t38": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e39": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanApplicationWithdrawnByApplicantCommandHandler\tjunction:LoanApplicationWritePlatformService\t39": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e40": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanApplicationWithdrawnByApplicantCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t40": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e41": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanApplicationWithdrawnByApplicantCommandHandler\tjunction:portfolio.loanaccount.service.LoanApplicationWritePlatformService\t41": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e42": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanApprovedAmountModificationCommandHandler\tjunction:LoanApprovedAmountWritePlatformService\t42": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e43": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanApprovedAmountModificationCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t43": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e44": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanApprovedAmountModificationCommandHandler\tjunction:portfolio.loanaccount.service.LoanApprovedAmountWritePlatformService\t44": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e45": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanGoodwillCreditCommandHandler\tjunction:LoanWritePlatformService\t45": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e46": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanGoodwillCreditCommandHandler\tjunction:infrastructure.DataIntegrityErrorHandler\t46": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e47": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanGoodwillCreditCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t47": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e48": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanGoodwillCreditCommandHandler\tjunction:portfolio.loanaccount.service.LoanWritePlatformService\t48": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e49": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanMerchantIssuedRefundCommandHandler\tjunction:LoanWritePlatformService\t49": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e50": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanMerchantIssuedRefundCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t50": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e51": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanMerchantIssuedRefundCommandHandler\tjunction:portfolio.loanaccount.service.LoanWritePlatformService\t51": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e52": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanRefundByCashCommandHandler\tjunction:LoanWritePlatformService\t52": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e53": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanRefundByCashCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t53": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e54": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanRefundByCashCommandHandler\tjunction:portfolio.loanaccount.service.LoanWritePlatformService\t54": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e55": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanRepaymentChargebackCommandHandler\tjunction:LoanWritePlatformService\t55": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e56": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanRepaymentChargebackCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t56": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e57": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.LoanRepaymentChargebackCommandHandler\tjunction:portfolio.loanaccount.service.LoanWritePlatformService\t57": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e58": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.MarkLoanAsFraudCommandHandler\tjunction:LoanWritePlatformService\t58": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e59": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.MarkLoanAsFraudCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t59": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e60": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.MarkLoanAsFraudCommandHandler\tjunction:portfolio.loanaccount.service.LoanWritePlatformService\t60": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e61": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.RejectAddtionalSharesCommandHandler\tjunction:ShareAccountWritePlatformService\t61": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e62": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.RejectAddtionalSharesCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t62": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e63": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.RejectAddtionalSharesCommandHandler\tjunction:portfolio.shareaccounts.service.ShareAccountWritePlatformService\t63": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e64": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.SaveCenterCollectionSheetCommandHandler\tjunction:CollectionSheetWritePlatformService\t64": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e65": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.SaveCenterCollectionSheetCommandHandler\tjunction:portfolio.collectionsheet.service.CollectionSheetWritePlatformService\t65": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e66": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.UpdateChargeDefinitionCommandHandler\tjunction:ChargeWritePlatformService\t66": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e67": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.UpdateChargeDefinitionCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t67": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e68": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.UpdateChargeDefinitionCommandHandler\tjunction:portfolio.charge.service.ChargeWritePlatformService\t68": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e69": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.UpdateDelinquencyBucketCommandHandler\tjunction:DelinquencyWritePlatformService\t69": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e70": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.UpdateDelinquencyBucketCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t70": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e71": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.UpdateDelinquencyBucketCommandHandler\tjunction:portfolio.delinquency.service.DelinquencyWritePlatformService\t71": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e72": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.UpdateDelinquencyRangeCommandHandler\tjunction:DelinquencyWritePlatformService\t72": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e73": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.UpdateDelinquencyRangeCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t73": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e74": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.UpdateDelinquencyRangeCommandHandler\tjunction:portfolio.delinquency.service.DelinquencyWritePlatformService\t74": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e75": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.UpdateInterestPauseCommandHandler\tjunction:InterestPauseWritePlatformService\t75": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e76": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.UpdateInterestPauseCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t76": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e77": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.UpdateInterestPauseCommandHandler\tjunction:portfolio.interestpauses.service.InterestPauseWritePlatformService\t77": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e78": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.UpdateLoanDelinquencyBucketCommandHandler\tjunction:DelinquencyWritePlatformService\t78": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e79": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.UpdateLoanDelinquencyBucketCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t79": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e80": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.UpdateLoanDelinquencyBucketCommandHandler\tjunction:portfolio.delinquency.service.DelinquencyWritePlatformService\t80": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e81": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.WithdrawClientTransferCommandHandler\tjunction:TransferWritePlatformService\t81": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e82": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.WithdrawClientTransferCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t82": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e83": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.WithdrawClientTransferCommandHandler\tjunction:portfolio.transfer.service.TransferWritePlatformService\t83": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e84": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.WorkingCapitalLoanRecoveryPaymentCommandHandler\tjunction:WorkingCapitalLoanRecoveryPaymentWriteService\t84": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e85": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.WorkingCapitalLoanRecoveryPaymentCommandHandler\tjunction:infrastructure.core.api.JsonCommand\t85": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "e86": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      },
+      "unit:handler.WorkingCapitalLoanRecoveryPaymentCommandHandler\tjunction:portfolio.workingcapitalloan.service.WorkingCapitalLoanRecoveryPaymentWriteService\t86": {
+        "usePredicate": false,
+        "_generated": [
+          "id",
+          "residual"
+        ],
+        "defaultStatus": true
+      }
+    },
+    "levels": [
+      {
+        "id": 0,
+        "label": "units"
+      },
+      {
+        "id": 1,
+        "label": "junctions"
+      }
+    ],
+    "residualMeaning": "Structural wiring only: no residual was computed, and every map stays unverified until a quantizer exists (j2)."
+  }
+}

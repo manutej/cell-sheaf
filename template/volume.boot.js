@@ -20,6 +20,15 @@ function hit(px, py) {
   return best;
 }
 
+function syncTopologyBanner() {
+  var el = document.getElementById("topology-banner");
+  if (!el) return;
+  var b = graph ? CellSheafInsight.bannerText(graph) : null;
+  var show = b && !pin;
+  el.hidden = !show;
+  el.textContent = show ? b : "";
+}
+
 function meaning(st) {
   if (st === "ok") return "Legal trunk edge. Compose equals collapse.";
   if (st === "strange") return "Map exists but rank or sort is odd. Needs a person.";
@@ -39,82 +48,25 @@ function folderName(id) {
   return p ? p.folder : id;
 }
 
-function openIds(flipId) {
-  const open = {};
-  if (!graph) return open;
-  (graph.pillars || []).forEach((p) => {
-    const hit = (graph.restrictions || []).some(
-      (r) => (r.source === p.id || r.target === p.id) && (r.status === "ok" || r.id === flipId),
-    );
-    if (hit) open[p.id] = 1;
-  });
-  return open;
+function restrictionById(id) {
+  return (graph.restrictions || []).find((r) => r.id === id);
 }
 
 function repairs() {
-  if (!graph) return [];
-  const rank = { broken: 0, missing: 1, strange: 2, ok: 3 };
-  const before = openIds();
-  return (graph.restrictions || [])
-    .filter((r) => r.status !== "ok")
-    .map((r) => {
-      const after = openIds(r.id);
-      const opens = (graph.pillars || []).filter((p) => !before[p.id] && after[p.id]).map((p) => p.folder);
-      const closes = (graph.pillars || []).every((p) => after[p.id]);
-      return {
-        id: r.id,
-        status: r.status,
-        residual: r.residual,
-        from: folderName(r.source),
-        to: folderName(r.target),
-        opens: opens,
-        closes: closes,
-      };
-    })
-    .sort((a, b) => {
-      if (a.closes !== b.closes) return a.closes ? -1 : 1;
-      if (a.opens.length !== b.opens.length) return b.opens.length - a.opens.length;
-      return (rank[a.status] ?? 9) - (rank[b.status] ?? 9) || b.residual - a.residual;
-    });
-}
-
-function closedNames(flipId) {
-  const open = openIds(flipId);
-  return (graph.pillars || []).filter((p) => !open[p.id]).map((p) => p.folder);
+  return graph ? CellSheafInsight.repairs(graph) : [];
 }
 
 function verdictText() {
-  if (!graph) return "";
-  const fixes = repairs();
-  const open = (graph.pillars || []).filter((p) => openIds()[p.id]).length;
-  const n = (graph.pillars || []).length;
-  if (!fixes.length) return "Every map commutes. " + open + " folders may fold.";
-  const best = fixes[0];
-  if (!best.opens.length) return open + " of " + n + " may fold. No single fix opens a new folder.";
-  if (best.closes) return "Fix " + best.from + " → " + best.to + " and the trunk closes.";
-  const still = n - open - best.opens.length;
-  return "Fix " + best.from + " → " + best.to + " and " + best.opens.join(", ") + " may fold. " + still + " still closed.";
+  return graph ? CellSheafInsight.verdict(graph) : "";
 }
 
 function rowText(r) {
-  if (r.closes) return r.from + " → " + r.to + " · closes the trunk";
-  if (r.opens.length) return r.from + " → " + r.to + " · opens " + r.opens.join(", ");
-  return r.from + " → " + r.to + " · opens nothing";
+  return CellSheafInsight.repairLabel(r);
 }
 
 function focusText(edge) {
-  const meaning = edge.meaning || lineOf(edge.st);
-  const list = repairs();
-  let f = null;
-  for (let i = 0; i < list.length; i++) if (list[i].id === edge.id) f = list[i];
-  if (!f) return meaning;
-  if (f.closes) return "This one map closes the trunk. " + meaning;
-  if (f.opens.length) {
-    const still = closedNames(edge.id);
-    return "Opens " + f.opens.join(", ") + ". " + (still.length ? still.join(", ") + " still closed. " : "") + meaning;
-  }
-  const closed = closedNames();
-  return "Opens no new folder. " + (closed.length ? closed.join(", ") + " still closed. " : "") + meaning;
+  if (!graph) return edge.meaning || lineOf(edge.st);
+  return CellSheafInsight.focusLine(graph, edge.id) || edge.meaning || lineOf(edge.st);
 }
 
 function fixOf(id) {
@@ -130,8 +82,10 @@ function panel(h) {
   const tb = document.getElementById("tb");
   const body = document.getElementById("tbody");
   if (!h) {
+    syncTopologyBanner();
     const blocks = repairs();
-    pt.textContent = "Look here";
+    const banner = graph && CellSheafInsight.bannerText(graph);
+    pt.textContent = banner ? "Check these" : "Look here";
     pm.textContent = BLURB[view];
     pa.textContent = verdictText();
     tb.hidden = !blocks.length;
@@ -158,6 +112,7 @@ function panel(h) {
     });
     return;
   }
+  syncTopologyBanner();
   if (h.k === "edge") {
     const e = h.e;
     pt.textContent = (e.a.folder || e.s) + " → " + (e.b.folder || e.t);
@@ -185,7 +140,7 @@ function panel(h) {
     let lever = "";
     for (let i = 0; i < fixes.length; i++) {
       if (fixes[i].id !== r.id) continue;
-      if (fixes[i].closes) lever = " · closes the trunk";
+      if (fixes[i].closesTrunk) lever = " · closes the trunk";
       else if (fixes[i].opens.length) lever = " · opens " + fixes[i].opens.join(", ");
     }
     const btn = document.createElement("button");
@@ -207,8 +162,9 @@ function panel(h) {
 
 function stats() {
   if (!graph) return;
+  syncTopologyBanner();
   const blocks = repairs();
-  const open = (graph.pillars || []).filter((p) => openIds()[p.id]).length;
+  const open = graph ? CellSheafInsight.openCount(graph) : 0;
   document.getElementById("sn").textContent = (graph.restrictions || []).length;
   document.getElementById("sok").textContent = open;
   document.getElementById("sbad").textContent = blocks.length;

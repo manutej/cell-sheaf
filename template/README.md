@@ -8,6 +8,7 @@ The HTML is the thing you copy when rolling a new sheaf — not a screenshot, no
 | --- | --- |
 | `index.html` | Chrome. Loads catalog + any rolled sheaf. |
 | `tokens.css` | Sanzo Wada tokens. Olive-buff paper, ube, emerald, gold. **Do not restyle.** |
+| `insight.bundle.js` | Browser bundle of cell-sheaf-swarm `insight.ts` (headlines, repairs, banner). Rebuild with esbuild when insight changes. |
 | `volume.paint.js` | Curvilinear ρ, last-folder pillars, up/down fans, six design views. |
 | `volume.boot.js` | Contract fetch, swipe/orbit, pause-default, roll file. |
 
@@ -25,3 +26,13 @@ Views (the question changes which family is drawn):
 Pause is default. Cap = ancillary (up). Base = downstream (down). Gold is earned (`onTrunk`).
 
 When rolling a new sheaf, keep these files. Swap JSON only.
+
+## Rebuild `insight.bundle.js`
+
+From the **cell-sheaf-swarm** repo root (esbuild 0.28.2):
+
+```sh
+npx esbuild src/lib/swarm/insight.ts --bundle --format=iife --global-name=CellSheafInsight --target=es2019 --outfile=../cell-sheaf/template/insight.bundle.js
+```
+
+Write the bundle to `template/insight.bundle.js` in this repo (sibling checkouts: redirect to `../cell-sheaf/template/insight.bundle.js`).

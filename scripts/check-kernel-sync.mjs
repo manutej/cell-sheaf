@@ -50,8 +50,16 @@ if (sha(tokensSurface) !== sha(tokensKernel)) {
 
 const surfaceSheaves = readdirSync(join(ROOT, "contracts")).filter((f) => f.endsWith(".sheaf.json"));
 for (const file of surfaceSheaves) {
-  const kPath = join(kernelRoot, "contracts", file);
   const sPath = join(ROOT, "contracts", file);
+  const surfaceDoc = JSON.parse(readFileSync(sPath, "utf8"));
+  const kPath = join(kernelRoot, "contracts", file);
+  // Bridge imports (x-sas, absent from kernel) are authored on the surface only.
+  if (
+    Object.prototype.hasOwnProperty.call(surfaceDoc, "x-sas") &&
+    !existsSync(kPath)
+  ) {
+    continue;
+  }
   if (!existsSync(kPath)) {
     fail(`contracts/${file} not present in kernel (unexpected surface-only contract)`);
   }

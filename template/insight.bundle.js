@@ -1,0 +1,160 @@
+var CellSheafInsight = (() => {
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+  // src/lib/swarm/insight.ts
+  var insight_exports = {};
+  __export(insight_exports, {
+    UNVERIFIED_BANNER: () => UNVERIFIED_BANNER,
+    bannerText: () => bannerText,
+    blockers: () => blockers,
+    focusLine: () => focusLine,
+    folderOf: () => folderOf,
+    importedGraph: () => importedGraph,
+    openCount: () => openCount,
+    repairLabel: () => repairLabel,
+    repairs: () => repairs,
+    statusLine: () => statusLine,
+    verdict: () => verdict
+  });
+  var RANK = { broken: 0, missing: 1, strange: 2, ok: 3 };
+  function statusLine(status) {
+    if (status === "broken") return "won't fold";
+    if (status === "missing") return "no map";
+    if (status === "strange") return "needs a person";
+    return "may fold";
+  }
+  var UNVERIFIED_BANNER = "Unverified topology from computed wiring links\u2014not a verified sheaf contradiction.";
+  function importedGraph(graph) {
+    const g = graph;
+    return Boolean(g["x-sas"]) || !Array.isArray(g.commits);
+  }
+  function edgeUnverified(graph, b) {
+    if (!importedGraph(graph)) return false;
+    return b.status === "strange" || b.status === "broken";
+  }
+  function edgeDangling(graph, b) {
+    if (b.status !== "broken") return false;
+    if (b.target.startsWith("missing:")) return true;
+    const pillar = graph.pillars.find((p) => p.id === b.target);
+    return (pillar == null ? void 0 : pillar.known) === false;
+  }
+  function folderOf(graph, id) {
+    var _a, _b;
+    return (_b = (_a = graph.pillars.find((p) => p.id === id)) == null ? void 0 : _a.folder) != null ? _b : id;
+  }
+  function openIds(graph, flipId) {
+    const open = /* @__PURE__ */ new Set();
+    for (const p of graph.pillars) {
+      const hit = graph.restrictions.some(
+        (r) => (r.source === p.id || r.target === p.id) && (r.status === "ok" || r.id === flipId)
+      );
+      if (hit) open.add(p.id);
+    }
+    return open;
+  }
+  function blockers(graph) {
+    return graph.restrictions.filter((r) => r.status !== "ok").map((r) => {
+      var _a;
+      const from = folderOf(graph, r.source);
+      const to = folderOf(graph, r.target);
+      return {
+        id: r.id,
+        status: r.status,
+        residual: r.residual,
+        source: r.source,
+        target: r.target,
+        from,
+        to,
+        relation: r.relation,
+        meaning: (_a = r.residualMeaning) != null ? _a : "",
+        line: statusLine(r.status)
+      };
+    }).sort((a, b) => RANK[a.status] - RANK[b.status] || b.residual - a.residual);
+  }
+  function repairs(graph) {
+    const before = openIds(graph);
+    return blockers(graph).map((b) => {
+      const after = openIds(graph, b.id);
+      const opens = graph.pillars.filter((p) => !before.has(p.id) && after.has(p.id)).map((p) => p.folder);
+      const closesTrunk = graph.pillars.every((p) => after.has(p.id));
+      return {
+        ...b,
+        opens,
+        closesTrunk,
+        unverified: edgeUnverified(graph, b),
+        missing: edgeDangling(graph, b)
+      };
+    }).sort((a, b) => {
+      if (a.closesTrunk !== b.closesTrunk) return a.closesTrunk ? -1 : 1;
+      if (a.opens.length !== b.opens.length) return b.opens.length - a.opens.length;
+      return RANK[a.status] - RANK[b.status] || b.residual - a.residual;
+    });
+  }
+  function repairLabel(fix) {
+    if (fix.unverified && fix.missing) return `${fix.from} \u2192 ${fix.to} \xB7 link to missing page`;
+    if (fix.unverified) return `${fix.from} \u2192 ${fix.to} \xB7 check`;
+    if (fix.closesTrunk) return `${fix.from} \u2192 ${fix.to} \xB7 closes the trunk`;
+    if (fix.opens.length) return `${fix.from} \u2192 ${fix.to} \xB7 opens ${fix.opens.join(", ")}`;
+    return `${fix.from} \u2192 ${fix.to} \xB7 opens nothing`;
+  }
+  function closedNames(graph, flipId) {
+    const open = openIds(graph, flipId);
+    return graph.pillars.filter((p) => !open.has(p.id)).map((p) => p.folder);
+  }
+  function focusLine(graph, edgeId) {
+    const r = graph.restrictions.find((x) => x.id === edgeId);
+    if (!r) return "";
+    const meaning = r.residualMeaning || statusLine(r.status);
+    if (r.status === "ok") return meaning;
+    const fix = repairs(graph).find((x) => x.id === edgeId);
+    if (!fix) return meaning;
+    if (fix.closesTrunk) return `This one map closes the trunk. ${meaning}`;
+    if (fix.opens.length) {
+      const still = closedNames(graph, edgeId);
+      const tail2 = still.length ? `${still.join(", ")} still closed. ` : "";
+      return `Opens ${fix.opens.join(", ")}. ${tail2}${meaning}`;
+    }
+    const closed = closedNames(graph);
+    const tail = closed.length ? `${closed.join(", ")} still closed. ` : "";
+    return `Opens no new folder. ${tail}${meaning}`;
+  }
+  function openCount(graph) {
+    const open = openIds(graph);
+    return graph.pillars.filter((p) => open.has(p.id)).length;
+  }
+  function verdict(graph) {
+    const fixes = repairs(graph);
+    const open = openCount(graph);
+    const n = graph.pillars.length;
+    if (!fixes.length) return `Every map commutes. ${open} folders may fold.`;
+    const best = fixes[0];
+    if (best.unverified && best.missing) return `Link to missing page ${best.from} \u2192 ${best.to}.`;
+    if (best.unverified) return `Check ${best.from} \u2192 ${best.to}. Unverified link.`;
+    if (!best.opens.length) return `${open} of ${n} may fold. No single fix opens a new folder.`;
+    if (best.closesTrunk) return `Fix ${best.from} \u2192 ${best.to} and the trunk closes.`;
+    const still = n - open - best.opens.length;
+    return `Fix ${best.from} \u2192 ${best.to} and ${best.opens.join(", ")} may fold. ${still} still closed.`;
+  }
+  function bannerText(graph) {
+    if (!importedGraph(graph)) return null;
+    if (graph.restrictions.some((r) => r.status === "ok")) return null;
+    return UNVERIFIED_BANNER;
+  }
+  return __toCommonJS(insight_exports);
+})();
